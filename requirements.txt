@@ -55,3 +55,5 @@ tqdm>=4.66.0              # Progress bars for long genomic computing loops
 rich>=13.7.0              # Formatted terminal tables, progress, and logging
 loguru>=0.7.2             # Robust, zero-boilerplate pipeline logging
 pyyaml>=6.0.1             # Workflow and parameter configuration parsing
+pytest>=8.0.0             # Unit testing suite for scientific invariants & data integrity
+

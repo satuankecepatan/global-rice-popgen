@@ -52,9 +52,9 @@ This project integrates computational population genomics, coalescent theory, an
 - [x] Establish isolated Python virtual environment (`.venv`) and pinned dependencies (`requirements.txt`)
 - [x] Implement programmatic NCBI Entrez query pipeline for plastome retrieval ([`scripts/search_ncbi_chloroplast.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/search_ncbi_chloroplast.py))
 - [x] Curate complete *Oryza sativa* chloroplast accessions ($N = 89$) and generate reference metadata tables ([`results/rice_chloroplast_genome_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/rice_chloroplast_genome_report.md))
-- [ ] Download raw FASTA sequences and verify sequence integrity with SHA-256 manifests
-- [ ] Retrieve wild outgroup plastomes (*Oryza rufipogon*, *Oryza nivara*, *Oryza punctata*) for ancestral allele polarization
-- [ ] Curate paired nuclear SNP datasets (e.g., 3K Rice Genomes Project) and passport/phenotypic metadata tables
+- [x] Download raw FASTA sequences and verify sequence integrity with SHA-256 manifests ([`scripts/download_sativa_plastomes.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/download_sativa_plastomes.py), [`data/raw/plastomes/sativa/manifest.sha256`](file:///d:/Magister/Proyek/global-rice-popgen/data/raw/plastomes/sativa/manifest.sha256))
+- [x] Retrieve wild outgroup plastomes (*Oryza rufipogon*, *Oryza nivara*, *Oryza punctata*) for ancestral allele polarization ([`scripts/curate_and_download_outgroups.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/curate_and_download_outgroups.py), [`results/wild_outgroup_chloroplast_genome_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/wild_outgroup_chloroplast_genome_report.md))
+- [x] Curate paired nuclear SNP datasets (3K Rice Genomes Project, $N = 3,024$) and passport/phenotypic metadata tables ([`scripts/curate_nuclear_3k_metadata.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/curate_nuclear_3k_metadata.py), [`results/rice_3k_nuclear_curation_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/rice_3k_nuclear_curation_report.md))
 
 ### Phase 2: Sequence Alignment, Annotation & Variant Calling
 - [ ] Perform whole-plastome multiple sequence alignment (e.g., MAFFT with manual refinement of inverted repeats)
@@ -103,15 +103,26 @@ global-rice-popgen/
 ├── .venv/                        # Project virtual environment (Python 3.11+)
 ├── data/
 │   ├── raw/                      # Read-only raw sequence data and manifests (immutable)
+│   │   ├── plastomes/
+│   │   │   ├── sativa/           # 90 complete O. sativa plastomes + manifest.sha256
+│   │   │   └── outgroups/        # 19 wild outgroup plastomes + manifest.sha256
+│   │   └── nuclear_3k/           # 3K RGP download manifest + manifest.sha256
 │   ├── interim/                  # Intermediate alignments and callable bed masks
 │   └── processed/                # Curated alignments, polarized VCFs, and tree files
 ├── requirements.txt              # Core scientific and genomics Python dependencies
 ├── results/
 │   ├── figures/                  # Publication-ready vector plots and diagrams
-│   ├── tables/                   # Curated metadata TSV/CSV tables
-│   └── rice_chloroplast_genome_report.md  # NCBI curation report (89 curated plastomes)
+│   ├── tables/                   # Curated metadata TSV/CSV tables (sativa, outgroups, 3K passport, phenotypes, crossref)
+│   ├── rice_chloroplast_genome_report.md    # NCBI curation report (89 curated plastomes)
+│   ├── wild_outgroup_chloroplast_genome_report.md # Wild outgroups report (19 outgroups)
+│   └── rice_3k_nuclear_curation_report.md   # 3K RGP nuclear genomics & phenotype curation report
 ├── scripts/
-│   └── search_ncbi_chloroplast.py         # Automated NCBI Entrez search and curation tool
+│   ├── search_ncbi_chloroplast.py           # Automated NCBI Entrez search and curation tool
+│   ├── download_sativa_plastomes.py         # Batch download & SHA-256 verification of sativa plastomes
+│   ├── curate_and_download_outgroups.py     # Wild outgroup retrieval, curation & manifest generator
+│   └── curate_nuclear_3k_metadata.py       # 3K RGP passport, Q-matrix, phenotype harmonization & crossref
+├── tests/
+│   └── test_phase1.py                       # Automated verification suite for Phase 1 data integrity
 └── README.md                     # Project summary, hypotheses, outcomes, and task tracker
 ```
 
@@ -125,11 +136,13 @@ All workflows run strictly inside the project's dedicated virtual environment:
 # 1. Activate project virtual environment
 .\.venv\Scripts\Activate.ps1
 
-# 2. Verify environment and installed genomics libraries
-python -c "import allel, Bio, pandas, numpy; print('Environment operational.')"
+# 2. Verify environment and run Phase 1 automated tests
+pytest tests\test_phase1.py -v
 
-# 3. Query and update curated chloroplast genome metadata
-python scripts\search_ncbi_chloroplast.py --output results\tables\ncbi_oryza_sativa_chloroplast_genomes.tsv
+# 3. Execute data acquisition pipelines
+python scripts\download_sativa_plastomes.py
+python scripts\curate_and_download_outgroups.py
+python scripts\curate_nuclear_3k_metadata.py
 ```
 
 ---
