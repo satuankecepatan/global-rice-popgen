@@ -1,0 +1,57 @@
+# ==============================================================================
+# Python Requirements: Global Rice Population Genomics & Statistics
+# Environment: Python 3.11+
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Core Numerical, Array & High-Performance Data Processing
+# ------------------------------------------------------------------------------
+numpy>=1.26.0
+scipy>=1.12.0
+pandas>=2.2.0
+polars>=1.0.0             # Ultra-fast tabular processing for large genomic metadata & SNP tables
+pyarrow>=15.0.0           # High-efficiency Parquet/Feather IO for big genomic datasets
+openpyxl>=3.1.0           # Accession & phenotypic metadata in Excel sheets
+h5py>=3.10.0              # HDF5 storage backend for chunked genomic datasets
+zarr>=2.16.0              # Scalable, chunked N-D array storage (ideal for huge genotype matrices)
+numcodecs>=0.12.0
+
+# ------------------------------------------------------------------------------
+# 2. Population Genomics & Bioinformatics
+# ------------------------------------------------------------------------------
+scikit-allel>=1.3.13      # Cornerstone popgen: PCA, Fst, Tajima's D, pi, LD decay, Patterson's D
+biopython>=1.83           # FASTA/GFF parsing, alignment manipulation, Bio.Phylo trees
+tskit>=0.5.6              # Tree sequence processing & Ancestral Recombination Graphs (ARGs)
+msprime>=1.3.0            # Coalescent popgen simulation & demographic history modeling
+toytree>=3.0.0            # Clean, publication-grade phylogenetic tree visualization & styling
+bioframe>=0.6.0           # Fast genomic interval operations (overlaps, flanks, closest BED regions)
+
+# ------------------------------------------------------------------------------
+# 3. Statistics, Machine Learning & Dimensionality Reduction
+# ------------------------------------------------------------------------------
+statsmodels>=0.14.0       # GLMs, ANOVA, multiple-testing corrections (FDR / Benjamini-Hochberg for GWAS)
+scikit-learn>=1.4.0       # PCA, t-SNE, hierarchical clustering, missing genotype imputation
+umap-learn>=0.5.5         # Uniform Manifold Approximation & Projection for population structure
+
+# ------------------------------------------------------------------------------
+# 4. Publication-Quality Visualization & Beautiful Figure Making
+# ------------------------------------------------------------------------------
+matplotlib>=3.8.0         # Foundational publication plotting system
+seaborn>=0.13.0           # Statistical visualizations (violin plots, heatmaps, joint distributions)
+scienceplots>=2.1.0       # Journal-ready Matplotlib style themes (Nature, Science, IEEE styles)
+adjustText>=1.1.0         # Automated text collision avoidance (crucial for Manhattan & Volcano plots)
+colorcet>=3.1.0           # Perceptually uniform colormaps & Glasbey categorical palettes (for varieties/subspecies)
+palettable>=3.3.3         # Curated color palettes (ColorBrewer, CartoColors, Wes Anderson)
+statannotations>=0.6.0    # Add statistical significance brackets & p-values directly to Seaborn plots
+plotly>=5.20.0            # Interactive 3D PCA, population admixture distributions, & interactive Manhattan plots
+
+# ------------------------------------------------------------------------------
+# 5. Interactive Computing, Notebooks & Workflow Utilities
+# ------------------------------------------------------------------------------
+jupyterlab>=4.1.0         # Modern interactive research environment
+ipykernel>=6.29.0
+ipywidgets>=8.1.0         # Interactive dashboard controls inside notebooks
+tqdm>=4.66.0              # Progress bars for long genomic computing loops
+rich>=13.7.0              # Formatted terminal tables, progress, and logging
+loguru>=0.7.2             # Robust, zero-boilerplate pipeline logging
+pyyaml>=6.0.1             # Workflow and parameter configuration parsing

@@ -1,0 +1,212 @@
+# ==============================================================================
+# Git Ignore Configuration: Population Genomics & Bioinformatics Project
+# Repository: global-rice-popgen
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Python & Environment
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Distribution & Packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ------------------------------------------------------------------------------
+# Jupyter Notebooks & Interactive Computing
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+.jupyter/
+.quarto/
+
+# ------------------------------------------------------------------------------
+# IDEs, Editors & OS Files
+# ------------------------------------------------------------------------------
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# PyCharm / IntelliJ
+.idea/
+*.iws
+*.iml
+
+# Vim / Emacs
+*.swp
+*.swo
+*~
+.#*
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# ------------------------------------------------------------------------------
+# Population Genomics, Sequencing & Bioinformatics Data
+# (Keep raw/heavy datasets out of version control)
+# ------------------------------------------------------------------------------
+# Raw High-Throughput Sequencing
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.fast5
+*.pod5
+
+# Reference Genomes & Sequence Assemblies
+*.fa
+*.fasta
+*.fna
+*.faa
+
+# Alignments & Indexed BAM/SAM/CRAM
+*.sam
+*.bam
+*.bai
+*.cram
+*.crai
+*.csi
+
+# Variant Call Formats (VCF / BCF)
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.vcf.gz.csi
+*.bcf
+*.bcf.csi
+
+# PLINK Binary Genotype Formats
+*.bed
+*.bim
+*.fam
+*.ped
+*.map
+*.raw
+*.eigenvec
+*.eigenval
+*.dist
+*.dist.id
+*.ld
+
+# Population Structure & Admixture Outputs
+*.Q
+*.P
+*.admixture
+
+# Tree Sequences (tskit / msprime)
+*.trees
+
+# Genomic Interval Tracks & BigWig
+*.bw
+*.bigWig
+*.bigBed
+*.bb
+*.bedGraph
+*.bg
+
+# Genome / Sequence Indexes
+*.fai
+*.dict
+*.amb
+*.ann
+*.bwt
+*.pac
+*.sa
+*.tbi
+
+# Large Matrix, Binary & Compressed Scientific Formats
+*.h5
+*.hdf5
+*.zarr/
+*.npz
+*.parquet
+*.feather
+
+# ------------------------------------------------------------------------------
+# Project Directory Structure Conventions
+# ------------------------------------------------------------------------------
+# Large data folders (preserve folder structure via .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/external/*
+!data/external/.gitkeep
+
+# Intermediate workflow outputs & caches
+output/*
+!output/.gitkeep
+results/large/*
+!results/large/.gitkeep
+
+# Large figure raster exports (keep code & vector SVGs/PDFs if desired)
+figures/drafts/
+figures/cache/
+*.tiff
+*.tif
+
+# HPC & Pipeline Logs
+logs/
+*.log
+slurm-*.out
+slurm-*.err
+
+# Scratch & Temporary Workspaces
+scratch/
+tmp/
+temp/
+
+# ------------------------------------------------------------------------------
+# Testing, Code Quality & Secrets
+# ------------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Local Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+credentials.json
+secrets.*
+.agents/
