@@ -65,14 +65,14 @@ This project integrates computational population genomics, coalescent theory, an
 - [x] Call and polarize SNPs and diagnostic indels into polarized VCF/BCF format ([`scripts/call_and_polarize_variants.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/call_and_polarize_variants.py), [`data/processed/variants/rice_plastome_variants_polarized.vcf.gz`](file:///d:/Magister/Proyek/global-rice-popgen/data/processed/variants/rice_plastome_variants_polarized.vcf.gz), [`results/plastome_alignment_variant_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/plastome_alignment_variant_report.md))
 
 ### Phase 3: Population Structure, Phylogeography & Cytonuclear Dynamics
+- [x] Calculate unbiased diversity statistics ($\hat{\pi}$, $\hat{\theta}_W$, Tajima's $D$, Fay & Wu's $H$) using exact callable denominators ($L_{\text{callable}}$) ([`scripts/compute_diversity_and_divergence.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/compute_diversity_and_divergence.py), [`results/tables/plastome_diversity_neutrality_summary.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_diversity_neutrality_summary.tsv), [`results/plastome_diversity_divergence_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/plastome_diversity_divergence_report.md))
+- [x] Compute pairwise population differentiation (Hudson's $\hat{F}_{ST}$, $d_{XY}$, $d_A$) across varietal groups and regions with delete-$m_b$ weighted block jackknife ([`results/tables/plastome_pairwise_divergence_fst.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_pairwise_divergence_fst.tsv), [`results/figures/fig1_plastome_diversity_neutrality.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig1_plastome_diversity_neutrality.pdf), [`results/figures/fig3_pairwise_differentiation_heatmaps.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig3_pairwise_differentiation_heatmaps.pdf))
 - [ ] Perform LD-pruning of biallelic SNPs ($r^2 < 0.2$) for unbiased population structure inference
 - [ ] Compute genomic relationship matrix (GRM / Kinship $K$) and run Principal Component Analysis (PCA)
 - [ ] Model ancestral admixture proportions (ADMIXTURE / fastSTRUCTURE, $K = 2\dots8$) and generate stacked barplots
 - [ ] Generate 2D/3D UMAP manifold embeddings colored by varietal groups and geographic provenance
 - [ ] Reconstruct maximum-likelihood and Bayesian plastid phylogenetic trees (IQ-TREE / BEAST)
 - [ ] Build median-joining haplotype networks (TCS / PopART) resolving maternal sub-lineages
-- [ ] Calculate unbiased diversity statistics ($\hat{\pi}$, $\hat{\theta}_W$, Tajima's $D$) using exact callable denominators ($L_{\text{callable}}$)
-- [ ] Compute pairwise population differentiation (Hudson's $\hat{F}_{ST}$, $d_{XY}$) across varietal groups and regions
 - [ ] Quantify cytonuclear discordance by projecting nuclear Q-matrices against plastome clades
 
 ### Phase 4: Genome-Wide Association Studies (GWAS) & Adaptive Evolution
