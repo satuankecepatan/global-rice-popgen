@@ -551,7 +551,7 @@ class PlastomePopgenEngine:
         results = []
 
         domains = ["LSC", "IRb", "SSC", "IRa"]
-        pop_targets = ["Japonica", "Indica", "Indica_Canonical", "Northern_Margin_Russia", "East_Asia", "All_Sativa"]
+        pop_targets = ["Japonica", "Indica", "Indica_Canonical", "Northern_Margin_Russia", "East_Asia", "All_Sativa", "All_Sativa_Canonical"]
 
         for dom in domains:
             row_sum = self.callable_summary[self.callable_summary["Genomic_Partition"] == dom]
@@ -1051,38 +1051,38 @@ class PlastomePopgenEngine:
         ax_b.legend(loc="lower right")
         ax_b.grid(axis="y", linestyle="--", alpha=0.5)
 
-        # Panel C: Diversity across quadripartite domains
+        # Panel C: Diversity across quadripartite domains (Canonical cohorts)
         ax_c = axes[1, 0]
         sub_c = df_comp[
             (df_comp["Type"] == "Quadripartite_Domain")
-            & (df_comp["Population"].isin(["Japonica", "Indica_Canonical", "All_Sativa"]))
-        ]
+            & (df_comp["Population"].isin(["Japonica", "Indica_Canonical", "All_Sativa_Canonical"]))
+        ].copy()
         sns.barplot(
             data=sub_c,
             x="Compartment",
             y="Pi_Per_kb",
             hue="Population",
-            palette={"Japonica": "#2b5c8f", "Indica_Canonical": "#d95f02", "All_Sativa": "#1b9e77"},
+            palette={"Japonica": "#2b5c8f", "Indica_Canonical": "#d95f02", "All_Sativa_Canonical": "#1b9e77"},
             edgecolor="#222222",
             ax=ax_c,
         )
         ax_c.set_xlabel("Quadripartite Domain")
         ax_c.set_ylabel(r"Nucleotide Diversity $\hat{\pi}$ ($10^{-3}$ / bp)")
-        ax_c.set_title("C. Diversity Partitioned by Quadripartite Compartments", weight="bold")
+        ax_c.set_title("C. Diversity Partitioned by Quadripartite Compartments (Canonical)", weight="bold")
         ax_c.grid(axis="y", linestyle="--", alpha=0.5)
 
-        # Panel D: Coding vs Non-Coding Diversity
+        # Panel D: Coding vs Non-Coding Diversity (Canonical cohorts)
         ax_d = axes[1, 1]
         sub_d = df_comp[
             (df_comp["Type"] == "Functional_Partition")
-            & (df_comp["Population"].isin(["Japonica", "Indica_Canonical", "All_Sativa"]))
-        ]
+            & (df_comp["Population"].isin(["Japonica", "Indica_Canonical", "All_Sativa_Canonical"]))
+        ].copy()
         sns.barplot(
             data=sub_d,
             x="Compartment",
             y="Pi_Per_kb",
             hue="Population",
-            palette={"Japonica": "#2b5c8f", "Indica_Canonical": "#d95f02", "All_Sativa": "#1b9e77"},
+            palette={"Japonica": "#2b5c8f", "Indica_Canonical": "#d95f02", "All_Sativa_Canonical": "#1b9e77"},
             edgecolor="#222222",
             ax=ax_d,
         )
@@ -1096,6 +1096,60 @@ class PlastomePopgenEngine:
         fig.savefig(f"{out_fig_dir}/fig1_plastome_diversity_neutrality.png")
         plt.close(fig)
         print("    Saved Figure 1: fig1_plastome_diversity_neutrality.[pdf/png]")
+
+        # ----------------------------------------------------------------------
+        # Supplementary Figure 1: Circular Plastome Quadripartite Doughnuts
+        # ----------------------------------------------------------------------
+        fig_supp, axes_supp = plt.subplots(1, 3, figsize=(15, 5))
+        domains = ["LSC", "IRb", "SSC", "IRa"]
+        domain_bp = [79883, 20718, 12213, 20712]
+        domain_colors = ["#2b5c8f", "#7570b3", "#d95f02", "#7570b3"]
+
+        pop_info = [
+            ("Japonica", "Japonica (n=51)", "#2b5c8f"),
+            ("Indica_Canonical", "Indica (Canonical, n=24)", "#d95f02"),
+            ("All_Sativa_Canonical", "All Sativa (Canonical, n=88)", "#1b9e77"),
+        ]
+
+        for s_idx, (p_id, p_label, p_col) in enumerate(pop_info):
+            ax_s = axes_supp[s_idx]
+            p_comp = df_comp[
+                (df_comp["Type"] == "Quadripartite_Domain") & (df_comp["Population"] == p_id)
+            ].set_index("Compartment")
+            pi_vals = [p_comp.loc[d, "Pi_Per_kb"] if d in p_comp.index else 0.0 for d in domains]
+
+            row_div = df_div[
+                (df_div["Population"] == p_id) & (df_div["Genomic_Partition"] == "Whole_Plastome")
+            ]
+            tot_pi = row_div.iloc[0]["Pi_Per_kb"] if not row_div.empty else 0.0
+
+            ax_s.pie(
+                domain_bp,
+                labels=[f"{d}\n({p:.3f})" for d, p in zip(domains, pi_vals)],
+                colors=domain_colors,
+                startangle=90,
+                counterclock=False,
+                wedgeprops=dict(width=0.38, edgecolor="white", linewidth=2),
+                pctdistance=0.75,
+                textprops=dict(fontsize=8.5, weight="bold"),
+            )
+            ax_s.text(0, 0.12, p_label, ha="center", va="center", fontsize=10.5, weight="bold", color=p_col)
+            ax_s.text(
+                0, -0.10,
+                f"Whole Plastome $\\hat{{\\pi}}$:\n{tot_pi:.3f} $\\times 10^{{-3}}$/bp",
+                ha="center", va="center", fontsize=9, color="#333333"
+            )
+            ax_s.set_title(f"{chr(65+s_idx)}. {p_label} Plastome Architecture", fontsize=11, weight="bold", pad=12)
+
+        fig_supp.suptitle(
+            r"Supplementary Figure 1: Circular Quadripartite Plastome Architecture & Nucleotide Diversity $\hat{\pi}$ ($10^{-3}$ / bp)",
+            fontsize=13, weight="bold", y=1.02
+        )
+        fig_supp.tight_layout()
+        fig_supp.savefig(f"{out_fig_dir}/fig1_supp_plastome_doughnuts.pdf")
+        fig_supp.savefig(f"{out_fig_dir}/fig1_supp_plastome_doughnuts.png")
+        plt.close(fig_supp)
+        print("    Saved Supplementary Figure 1: fig1_supp_plastome_doughnuts.[pdf/png]")
 
         # ----------------------------------------------------------------------
         # Figure 2: Whole-Genome Sliding Window Scan of Diversity & Divergence

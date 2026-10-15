@@ -41,6 +41,8 @@ def test_phase3_figures_exist():
     figures = [
         "results/figures/fig1_plastome_diversity_neutrality.pdf",
         "results/figures/fig1_plastome_diversity_neutrality.png",
+        "results/figures/fig1_supp_plastome_doughnuts.pdf",
+        "results/figures/fig1_supp_plastome_doughnuts.png",
         "results/figures/fig2_sliding_window_divergence_scan.pdf",
         "results/figures/fig2_sliding_window_divergence_scan.png",
         "results/figures/fig3_pairwise_differentiation_heatmaps.pdf",
@@ -124,7 +126,7 @@ def test_inverted_repeats_symmetry():
     irb = df_comp[df_comp["Compartment"] == "IRb"].set_index("Population")
     ira = df_comp[df_comp["Compartment"] == "IRa"].set_index("Population")
 
-    for pop in ["Japonica", "Indica_Canonical", "Northern_Margin_Russia", "All_Sativa"]:
+    for pop in ["Japonica", "Indica_Canonical", "Northern_Margin_Russia", "All_Sativa", "All_Sativa_Canonical"]:
         if pop in irb.index and pop in ira.index:
             s_irb = irb.loc[pop, "Segregating_Sites_S"]
             s_ira = ira.loc[pop, "Segregating_Sites_S"]

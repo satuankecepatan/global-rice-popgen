@@ -71,14 +71,17 @@ Subtask 3.1 delivers the mathematical estimation of nucleotide diversity ($\hat{
 *Demonstrating evolutionary conservation across quadripartite domains and functional partitions:*
 
 ```text
-[LSC: 79,883 bp]       ---> Pi = 0.138 per kb | S = 130 | Tajima's D = -2.207
-[IRb: 20,718 bp]       ---> Pi = 0.039 per kb | S =  15 | Tajima's D = -2.315 (3.5x lower mutation load)
-[SSC: 12,213 bp]       ---> Pi = 0.108 per kb | S =  13 | Tajima's D = -1.622
-[IRa: 20,712 bp]       ---> Pi = 0.039 per kb | S =  15 | Tajima's D = -2.315 (Exact IR symmetry)
+[LSC: 79,883 bp]       ---> Japonica: 0.138 | Indica_Canonical: 0.359 | All_Sativa_Canonical: 0.552 (10^-3 / bp)
+[IRb: 20,718 bp]       ---> Japonica: 0.039 | Indica_Canonical: 0.073 | All_Sativa_Canonical: 0.091 (Active copy-correction)
+[SSC: 12,213 bp]       ---> Japonica: 0.108 | Indica_Canonical: 0.457 | All_Sativa_Canonical: 0.458 (Canonical cohort)
+[IRa: 20,712 bp]       ---> Japonica: 0.039 | Indica_Canonical: 0.073 | All_Sativa_Canonical: 0.091 (Exact IR symmetry)
 
-[Protein-Coding CDS]   ---> Pi = 0.076 per kb | S = 115 | Strong purifying selection against missense mutations
-[Intergenic Spacers]   ---> Pi = 0.220 per kb | S =  43 | Relaxed constraint across non-coding promoter/spacer regions
+[Protein-Coding CDS]   ---> Japonica: 0.076 | Indica_Canonical: 0.169 | All_Sativa_Canonical: 0.232 (Strong purifying selection)
+[Intergenic Spacers]   ---> Japonica: 0.236 | Indica_Canonical: 0.767 | All_Sativa_Canonical: 1.139 (Relaxed neutral constraint)
 ```
+
+> [!NOTE]
+> **Resolution of SSC Domain Inversion:** Accessions `CP054688.1` (Minghui 63) and `CP056064.1` (Zhenshan 97) harbor an isomeric flip-flop inversion of the SSC domain. Evaluating canonical cohorts (`Indica_Canonical` $n=24$, `All_Sativa_Canonical` $n=88$) removes 4,684 alignment-induced pseudo-SNPs, recovering true biological diversity ($\hat{\pi}_{\text{SSC}} = 0.458 \times 10^{-3}$/bp).
 
 ---
 
@@ -112,7 +115,8 @@ Across the 106 protein-coding genes, candidate loci with high differentiation be
 | **Table 3: Pairwise Divergence** | [`results/tables/plastome_pairwise_divergence_fst.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_pairwise_divergence_fst.tsv) | TSV / CSV | Hudson's $\hat{F}_{ST}$, Jackknife SE, $Z$-scores, $p$-values, $d_{XY}$, net $d_A$ |
 | **Table 4: Sliding Window Scan** | [`results/tables/plastome_sliding_window_divergence.tsv.gz`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_sliding_window_divergence.tsv.gz) | Compressed TSV | 130 sliding windows (5 kb window, 1 kb step) with gene overlaps |
 | **Table 5: Gene Selection Scan** | [`results/tables/plastome_gene_selection_diversity.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_gene_selection_diversity.tsv) | TSV / CSV | Gene-by-gene metrics for all 106 protein-coding genes |
-| **Figure 1: Diversity & Neutrality** | [`results/figures/fig1_plastome_diversity_neutrality.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig1_plastome_diversity_neutrality.pdf) | Vector PDF + PNG | 4-panel composite: Cohort $\hat{\pi}$, Tajima's $D$, domain and functional breakdown |
+| **Figure 1: Diversity & Neutrality** | [`results/figures/fig1_plastome_diversity_neutrality.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig1_plastome_diversity_neutrality.pdf) | Vector PDF + PNG | 4-panel composite: Cohort $\hat{\pi}$, Tajima's $D$, domain and functional breakdown (Canonical) |
+| **Supplementary Figure 1: Plastome Doughnuts** | [`results/figures/fig1_supp_plastome_doughnuts.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig1_supp_plastome_doughnuts.pdf) | Vector PDF + PNG | 3 circular quadripartite plastome doughnuts (Japonica, Indica, All Sativa) |
 | **Figure 2: Sliding Window Profile** | [`results/figures/fig2_sliding_window_divergence_scan.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig2_sliding_window_divergence_scan.pdf) | Vector PDF + PNG | Whole-genome profile: Track 1: $\pi$; Track 2: Tajima's $D$; Track 3: $\hat{F}_{ST}$ & $d_{XY}$ |
 | **Figure 3: Differentiation Heatmaps** | [`results/figures/fig3_pairwise_differentiation_heatmaps.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig3_pairwise_differentiation_heatmaps.pdf) | Vector PDF + PNG | Heatmaps of pairwise Hudson's $\hat{F}_{ST}$ and absolute divergence $d_{XY}$ |
 | **Figure 4: Gene Selection Scatter** | [`results/figures/fig4_gene_selection_fst_tajima.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig4_gene_selection_fst_tajima.pdf) | Vector PDF + PNG | Volcano/scatter: Gene Hudson's $\hat{F}_{ST}$ vs. Tajima's $D$ with candidate labels |
