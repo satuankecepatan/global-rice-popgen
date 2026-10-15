@@ -192,6 +192,7 @@ slurm-*.err
 scratch/
 tmp/
 temp/
+tools/
 
 # ------------------------------------------------------------------------------
 # Testing, Code Quality & Secrets

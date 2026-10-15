@@ -57,11 +57,12 @@ This project integrates computational population genomics, coalescent theory, an
 - [x] Curate paired nuclear SNP datasets (3K Rice Genomes Project, $N = 3,024$) and passport/phenotypic metadata tables ([`scripts/curate_nuclear_3k_metadata.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/curate_nuclear_3k_metadata.py), [`results/rice_3k_nuclear_curation_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/rice_3k_nuclear_curation_report.md))
 
 ### Phase 2: Sequence Alignment, Annotation & Variant Calling
-- [ ] Perform whole-plastome multiple sequence alignment (e.g., MAFFT with manual refinement of inverted repeats)
-- [ ] Define standardized coordinate system and coordinate-liftover against reference *Nipponbare* (`NC_001320.1`)
-- [ ] Extract protein-coding genes (CDS), ribosomal RNAs (rRNA), transfer RNAs (tRNA), and intergenic spacers (IGS)
-- [ ] Construct callable site bed mask excluding homopolymer tracts and unalignable hypervariable repeats
-- [ ] Call and polarize SNPs and diagnostic indels into polarized VCF/BCF format
+- [x] Standardize plastome circular orientation and linear breakpoints against *Nipponbare* (`NC_001320.1`) ([`scripts/standardize_plastomes.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/standardize_plastomes.py), [`results/tables/plastome_standardization_summary.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_standardization_summary.tsv))
+- [x] Extract protein-coding genes (CDS), ribosomal RNAs (rRNA), transfer RNAs (tRNA), and intergenic spacers (IGS) ([`scripts/extract_plastome_annotations.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/extract_plastome_annotations.py), [`results/plastome_annotation_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/plastome_annotation_report.md))
+- [x] Construct callable site bed mask excluding homopolymer tracts and simple sequence repeats ([`scripts/generate_callable_mask.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/generate_callable_mask.py), [`data/interim/callable_mask/callable_sites.bed`](file:///d:/Magister/Proyek/global-rice-popgen/data/interim/callable_mask/callable_sites.bed))
+- [x] Perform whole-plastome multiple sequence alignment and single-copy partitioning ([`scripts/align_and_liftover_plastomes.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/align_and_liftover_plastomes.py), [`results/alignments/manifest.sha256`](file:///d:/Magister/Proyek/global-rice-popgen/results/alignments/manifest.sha256))
+- [x] Define standardized coordinate system and coordinate-liftover table against reference *Nipponbare* ([`results/tables/coordinate_liftover_index.tsv.gz`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/coordinate_liftover_index.tsv.gz))
+- [x] Call and polarize SNPs and diagnostic indels into polarized VCF/BCF format ([`scripts/call_and_polarize_variants.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/call_and_polarize_variants.py), [`data/processed/variants/rice_plastome_variants_polarized.vcf.gz`](file:///d:/Magister/Proyek/global-rice-popgen/data/processed/variants/rice_plastome_variants_polarized.vcf.gz), [`results/plastome_alignment_variant_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/plastome_alignment_variant_report.md))
 
 ### Phase 3: Population Structure, Phylogeography & Cytonuclear Dynamics
 - [ ] Perform LD-pruning of biallelic SNPs ($r^2 < 0.2$) for unbiased population structure inference

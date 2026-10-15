@@ -1,0 +1,5 @@
+Domain	Start_1based	End_1based	Length_bp	Description
+LSC	1	80592	80592	Large Single Copy
+IRb	80593	101391	20799	Inverted Repeat B
+SSC	101392	113726	12335	Small Single Copy
+IRa	113727	134525	20799	Inverted Repeat A

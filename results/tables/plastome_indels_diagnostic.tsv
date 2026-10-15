@@ -1,0 +1,50 @@
+Start_Alignment_Col	End_Alignment_Col	Reference_Coordinate	Length_bp	Domain	Gap_Frequency_Sativa	Indel_Type	Is_Diagnostic_Marker	Genomic_Context
+3536	3537	3535	2	LSC	0.5167	Deletion	False	.
+5091	5097	5005	7	LSC	0.7556	Deletion	False	rps16
+6373	6373	6244	1	LSC	0.2889	Insertion	False	IGS_rps16-tRNA-Gln
+9019	9097	8535	79	LSC	0.3781	Insertion	True	hypothetical protein
+12373	12374	11439	2	LSC	0.5056	Deletion	False	IGS_psbD/psbC-tRNA-Ser
+13930	13933	12668	4	LSC	0.3	Insertion	False	IGS_tRNA-Gly-tRNA-Met
+15635	15636	13987	2	LSC	0.5056	Deletion	False	IGS_tRNA-Met-hypothetical protein
+15656	15657	14008	2	LSC	0.3	Insertion	False	IGS_tRNA-Met-hypothetical protein
+18361	18361	16670	1	LSC	0.7556	Deletion	False	IGS_tRNA-Asp-psbM
+18836	18837	17096	2	LSC	0.5	Insertion	False	IGS_psbM-petN
+19073	19098	17332	26	LSC	0.1632	Insertion	True	IGS_psbM-petN
+19129	19148	17377	20	LSC	0.79	Deletion	True	IGS_psbM-petN
+19573	19641	17774	69	LSC	0.8048	Deletion	True	IGS_petN-tRNA-Cys
+19700	19728	17831	29	LSC	0.4544	Insertion	True	IGS_petN-tRNA-Cys
+33565	33912	31525	348	LSC	0.085	Insertion	True	IGS_atpI-atpH
+36255	36256	34184	2	LSC	0.5056	Deletion	False	IGS_atpF-atpA
+43459	43461	41364	3	LSC	0.6704	Deletion	False	IGS_psaA-ycf3
+46016	46018	43898	3	LSC	0.6333	Deletion	False	IGS_ycf3-tRNA-Ser
+48216	48220	46095	5	LSC	0.3	Insertion	False	IGS_tRNA-Thr-tRNA-Leu
+48298	48298	46176	1	LSC	0.8556	Deletion	False	IGS_tRNA-Thr-tRNA-Leu
+48306	48307	46184	2	LSC	0.1556	Insertion	False	IGS_tRNA-Thr-tRNA-Leu
+48399	48401	46276	3	LSC	0.6741	Deletion	False	IGS_tRNA-Thr-tRNA-Leu
+48667	48672	46543	6	LSC	0.2556	Insertion	False	IGS_tRNA-Thr-tRNA-Leu
+49348	49348	47218	1	LSC	0.7222	Deletion	False	IGS_tRNA-Leu-tRNA-Phe
+55651	55652	53328	2	LSC	0.4944	Insertion	False	IGS_atpE/atpB-rbcL
+59364	59436	57008	73	LSC	0.1689	Insertion	True	IGS_acetyl-CoA carboxylase beta subunit-psaI
+59494	59494	57133	1	LSC	0.9222	Deletion	False	IGS_acetyl-CoA carboxylase beta subunit-psaI
+59999	60003	57635	5	LSC	0.7111	Deletion	False	IGS_psaI-ycf4
+63262	63266	60856	5	LSC	0.7111	Deletion	False	IGS_petA-psbJ
+68068	68071	65607	4	LSC	0.6	Deletion	False	IGS_rpl33-rps18
+73855	73856	71369	2	LSC	0.5056	Deletion	False	petB
+78468	78470	75968	3	LSC	0.4185	Insertion	False	rps12
+78721	78722	76221	2	LSC	0.1556	Insertion	False	rps12
+79063	79064	76563	2	LSC	0.2333	Insertion	False	rps12
+79173	79214	76672	42	LSC	0.4947	Insertion	True	rps12
+80247	80249	77722	3	LSC	0.7407	Deletion	False	rps12
+80939	80945	78411	7	LSC	0.3619	Insertion	False	rpl16
+81677	81678	79138	2	LSC	0.5111	Deletion	False	rpl16
+82615	82617	80075	3	LSC	0.3333	Insertion	False	rps12
+104395	104404	101596	10	SSC	0.5978	Deletion	False	ndhF
+104488	104514	101671	27	SSC	0.5905	Deletion	True	ndhF
+104713	104726	101794	14	SSC	0.0786	Insertion	False	ndhF
+104842	104854	101901	13	SSC	0.4624	Insertion	False	ndhF
+104947	104955	101975	9	SSC	0.5543	Deletion	False	ndhF
+106380	106389	103229	10	SSC	0.5978	Deletion	False	ndhF
+106872	106877	103695	6	SSC	0.1833	Insertion	False	rps12
+107099	107109	103893	11	SSC	0.2919	Insertion	False	rps12
+107844	107861	104511	18	SSC	0.3148	Insertion	False	rpl32
+114732	114743	110520	12	SSC	0.7444	Deletion	False	ndhI

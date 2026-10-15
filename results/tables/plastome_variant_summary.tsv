@@ -1,0 +1,13 @@
+Metric	Count
+Total Segregating SNP Sites (S)	5794
+High-Confidence Callable SNPs (PASS)	5726
+Masked Homopolymer SNPs	55
+Polarized SNPs (Ancestral Allele Known)	5794
+Coding Missense SNPs (Nonsynonymous)	3964
+Coding Synonymous SNPs (Silent)	1186
+Intergenic Spacers (IGS) SNPs	644
+LSC Compartment SNPs	968
+IRb Compartment SNPs	29
+SSC Compartment SNPs	4768
+IRa Compartment SNPs	29
+Diagnostic Large Indels (>= 20 bp)	9

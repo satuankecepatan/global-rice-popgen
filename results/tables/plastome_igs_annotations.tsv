@@ -1,0 +1,79 @@
+Accession	IGS_Name	Left_Flank	Right_Flank	Domain	Start_1based	End_1based	Length_bp
+NC_001320.1	origin_to_psbA	origin	psbA	LSC	1	81	81
+NC_001320.1	IGS_psbA-trnK/matK	psbA	trnK/matK	LSC	1144	1362	219
+NC_001320.1	IGS_trnK/matK-rps16	trnK/matK	rps16	LSC	3939	4486	548
+NC_001320.1	IGS_rps16-tRNA-Gln	rps16	tRNA-Gln	LSC	5554	6614	1061
+NC_001320.1	IGS_tRNA-Gln-psbK	tRNA-Gln	psbK	LSC	6688	7032	345
+NC_001320.1	IGS_psbK-psbI	psbK	psbI	LSC	7219	7607	389
+NC_001320.1	IGS_psbI-tRNA-Ser	psbI	tRNA-Ser	LSC	7719	7828	110
+NC_001320.1	IGS_tRNA-Ser-hypothetical protein	tRNA-Ser	hypothetical protein	LSC	7917	8348	432
+NC_001320.1	IGS_hypothetical protein-psbD/psbC	hypothetical protein	psbD/psbC	LSC	8652	8899	248
+NC_001320.1	IGS_psbD/psbC-tRNA-Ser	psbD/psbC	tRNA-Ser	LSC	11331	11502	172
+NC_001320.1	IGS_tRNA-Ser-psbZ	tRNA-Ser	psbZ	LSC	11591	11936	346
+NC_001320.1	IGS_psbZ-tRNA-Gly	psbZ	tRNA-Gly	LSC	12126	12330	205
+NC_001320.1	IGS_tRNA-Gly-tRNA-Met	tRNA-Gly	tRNA-Met	LSC	12402	12838	437
+NC_001320.1	IGS_tRNA-Met-hypothetical protein	tRNA-Met	hypothetical protein	LSC	12913	14076	1164
+NC_001320.1	IGS_hypothetical protein-hypothetical protein	hypothetical protein	hypothetical protein	LSC	14347	14570	224
+NC_001320.1	IGS_hypothetical protein-tRNA-Thr	hypothetical protein	tRNA-Thr	LSC	14784	15059	276
+NC_001320.1	IGS_tRNA-Thr-tRNA-Glu	tRNA-Thr	tRNA-Glu	LSC	15132	15649	518
+NC_001320.1	IGS_tRNA-Glu-tRNA-Tyr	tRNA-Glu	tRNA-Tyr	LSC	15723	15783	61
+NC_001320.1	IGS_tRNA-Tyr-tRNA-Asp	tRNA-Tyr	tRNA-Asp	LSC	15868	16230	363
+NC_001320.1	IGS_tRNA-Asp-psbM	tRNA-Asp	psbM	LSC	16305	16684	380
+NC_001320.1	IGS_psbM-petN	psbM	petN	LSC	16790	17555	766
+NC_001320.1	IGS_petN-tRNA-Cys	petN	tRNA-Cys	LSC	17646	18058	413
+NC_001320.1	IGS_tRNA-Cys-rpoB	tRNA-Cys	rpoB	LSC	18130	19213	1084
+NC_001320.1	IGS_rpoB-rpoC1	rpoB	rpoC1	LSC	22442	22478	37
+NC_001320.1	IGS_rpoC1-rpoC2	rpoC1	rpoC2	LSC	24528	24726	199
+NC_001320.1	IGS_rpoC2-rps2	rpoC2	rps2	LSC	29269	29539	271
+NC_001320.1	IGS_rps2-atpI	rps2	atpI	LSC	30251	30500	250
+NC_001320.1	IGS_atpI-atpH	atpI	atpH	LSC	31245	32038	794
+NC_001320.1	IGS_atpH-atpF	atpH	atpF	LSC	32285	32740	456
+NC_001320.1	IGS_atpF-atpA	atpF	atpA	LSC	34112	34209	98
+NC_001320.1	IGS_atpA-tRNA-Arg	atpA	tRNA-Arg	LSC	35734	35865	132
+NC_001320.1	IGS_tRNA-Arg-rps14	tRNA-Arg	rps14	LSC	35938	36308	371
+NC_001320.1	IGS_rps14-psaB	rps14	psaB	LSC	36621	36767	147
+NC_001320.1	IGS_psaB-psaA	psaB	psaA	LSC	38973	38997	25
+NC_001320.1	IGS_psaA-ycf3	psaA	ycf3	LSC	41251	41850	600
+NC_001320.1	IGS_ycf3-tRNA-Ser	ycf3	tRNA-Ser	LSC	43838	44437	600
+NC_001320.1	IGS_tRNA-Ser-rps4	tRNA-Ser	rps4	LSC	44525	44809	285
+NC_001320.1	IGS_rps4-tRNA-Thr	rps4	tRNA-Thr	LSC	45416	45714	299
+NC_001320.1	IGS_tRNA-Thr-tRNA-Leu	tRNA-Thr	tRNA-Leu	LSC	45788	46557	770
+NC_001320.1	IGS_tRNA-Leu-tRNA-Phe	tRNA-Leu	tRNA-Phe	LSC	47183	47424	242
+NC_001320.1	IGS_tRNA-Phe-ndhJ	tRNA-Phe	ndhJ	LSC	47498	47991	494
+NC_001320.1	IGS_ndhJ-ndhK	ndhJ	ndhK	LSC	48472	48568	97
+NC_001320.1	IGS_ndhK-ndhC	ndhK	ndhC	LSC	49247	49299	53
+NC_001320.1	IGS_ndhC-tRNA-Val	ndhC	tRNA-Val	LSC	49663	50366	704
+NC_001320.1	IGS_tRNA-Val-tRNA-Met	tRNA-Val	tRNA-Met	LSC	51038	51218	181
+NC_001320.1	IGS_tRNA-Met-atpE/atpB	tRNA-Met	atpE/atpB	LSC	51292	51403	112
+NC_001320.1	IGS_atpE/atpB-rbcL	atpE/atpB	rbcL	LSC	53311	54094	784
+NC_001320.1	IGS_rbcL-ORF42	rbcL	ORF42	LSC	55529	55805	277
+NC_001320.1	IGS_ORF42-hypothetical protein	ORF42	hypothetical protein	LSC	55935	55957	23
+NC_001320.1	IGS_hypothetical protein-acetyl-CoA carboxylase beta subunit	hypothetical protein	acetyl-CoA carboxylase beta subunit	LSC	56360	56552	193
+NC_001320.1	IGS_acetyl-CoA carboxylase beta subunit-psaI	acetyl-CoA carboxylase beta subunit	psaI	LSC	56874	57221	348
+NC_001320.1	IGS_psaI-ycf4	psaI	ycf4	LSC	57333	57701	369
+NC_001320.1	IGS_ycf4-hypothetical protein	ycf4	hypothetical protein	LSC	58260	58289	30
+NC_001320.1	IGS_hypothetical protein-cemA	hypothetical protein	cemA	LSC	58548	58676	129
+NC_001320.1	IGS_cemA-petA	cemA	petA	LSC	59370	59600	231
+NC_001320.1	IGS_petA-psbJ	petA	psbJ	LSC	60564	61564	1001
+NC_001320.1	IGS_psbJ-psbL	psbJ	psbL	LSC	61688	61813	126
+NC_001320.1	IGS_psbL-psbF	psbL	psbF	LSC	61931	61952	22
+NC_001320.1	IGS_psbF-psbE	psbF	psbE	LSC	62073	62082	10
+NC_001320.1	IGS_psbE-petL	psbE	petL	LSC	62335	63530	1196
+NC_001320.1	IGS_petL-petG	petL	petG	LSC	63627	63798	172
+NC_001320.1	IGS_petG-tRNA-Trp	petG	tRNA-Trp	LSC	63913	64028	116
+NC_001320.1	IGS_tRNA-Trp-tRNA-Pro	tRNA-Trp	tRNA-Pro	LSC	64103	64228	126
+NC_001320.1	IGS_tRNA-Pro-photosystem I subunit IX	tRNA-Pro	photosystem I subunit IX	LSC	64304	64621	318
+NC_001320.1	IGS_photosystem I subunit IX-rpl33	photosystem I subunit IX	rpl33	LSC	64757	65197	441
+NC_001320.1	IGS_rpl33-rps18	rpl33	rps18	LSC	65399	65640	242
+NC_001320.1	IGS_rps18-rpl20	rps18	rpl20	LSC	66133	66354	222
+NC_001320.1	IGS_rpl20-rps12/rps12/clpP/psbB/psbT/psbN/psbH/petB/petD/rpoA/rps11/rpl36/infA/rps8/rpl14/rpl16/rps3/rpl22/tRNA-His/rpl2/hypothetical protein/rpl23/tRNA-Ile/hypothetical protein/hypothetical protein/tRNA-Leu/ndhB/rps7/hypothetical protein/hypothetical protein/tRNA-Val/16S ribosomal RNA/tRNA-Ile/hypothetical protein/tRNA-Ala/23S ribosomal RNA/4.5S ribosomal RNA/5S ribosomal RNA/tRNA-Arg/hypothetical protein/tRNA-Asn/hypothetical protein/rps15/hypothetical protein/ndhF/rpl32/tRNA-Leu/ccsA/ndhD/psaC/ndhE/ndhG/ndhI/ndhA/ndhH/rps15/hypothetical protein/tRNA-Asn/hypothetical protein/tRNA-Arg/5S ribosomal RNA/4.5S ribosomal RNA/23S ribosomal RNA/tRNA-Ala/tRNA-Ile/hypothetical protein/16S ribosomal RNA/tRNA-Val/hypothetical protein/hypothetical protein	rpl20	rps12/rps12/clpP/psbB/psbT/psbN/psbH/petB/petD/rpoA/rps11/rpl36/infA/rps8/rpl14/rpl16/rps3/rpl22/tRNA-His/rpl2/hypothetical protein/rpl23/tRNA-Ile/hypothetical protein/hypothetical protein/tRNA-Leu/ndhB/rps7/hypothetical protein/hypothetical protein/tRNA-Val/16S ribosomal RNA/tRNA-Ile/hypothetical protein/tRNA-Ala/23S ribosomal RNA/4.5S ribosomal RNA/5S ribosomal RNA/tRNA-Arg/hypothetical protein/tRNA-Asn/hypothetical protein/rps15/hypothetical protein/ndhF/rpl32/tRNA-Leu/ccsA/ndhD/psaC/ndhE/ndhG/ndhI/ndhA/ndhH/rps15/hypothetical protein/tRNA-Asn/hypothetical protein/tRNA-Arg/5S ribosomal RNA/4.5S ribosomal RNA/23S ribosomal RNA/tRNA-Ala/tRNA-Ile/hypothetical protein/16S ribosomal RNA/tRNA-Val/hypothetical protein/hypothetical protein	LSC	66715	67389	675
+NC_001320.1	IGS_rps12/rps12/clpP/psbB/psbT/psbN/psbH/petB/petD/rpoA/rps11/rpl36/infA/rps8/rpl14/rpl16/rps3/rpl22/tRNA-His/rpl2/hypothetical protein/rpl23/tRNA-Ile/hypothetical protein/hypothetical protein/tRNA-Leu/ndhB/rps7/hypothetical protein/hypothetical protein/tRNA-Val/16S ribosomal RNA/tRNA-Ile/hypothetical protein/tRNA-Ala/23S ribosomal RNA/4.5S ribosomal RNA/5S ribosomal RNA/tRNA-Arg/hypothetical protein/tRNA-Asn/hypothetical protein/rps15/hypothetical protein/ndhF/rpl32/tRNA-Leu/ccsA/ndhD/psaC/ndhE/ndhG/ndhI/ndhA/ndhH/rps15/hypothetical protein/tRNA-Asn/hypothetical protein/tRNA-Arg/5S ribosomal RNA/4.5S ribosomal RNA/23S ribosomal RNA/tRNA-Ala/tRNA-Ile/hypothetical protein/16S ribosomal RNA/tRNA-Val/hypothetical protein/hypothetical protein-rps7	rps12/rps12/clpP/psbB/psbT/psbN/psbH/petB/petD/rpoA/rps11/rpl36/infA/rps8/rpl14/rpl16/rps3/rpl22/tRNA-His/rpl2/hypothetical protein/rpl23/tRNA-Ile/hypothetical protein/hypothetical protein/tRNA-Leu/ndhB/rps7/hypothetical protein/hypothetical protein/tRNA-Val/16S ribosomal RNA/tRNA-Ile/hypothetical protein/tRNA-Ala/23S ribosomal RNA/4.5S ribosomal RNA/5S ribosomal RNA/tRNA-Arg/hypothetical protein/tRNA-Asn/hypothetical protein/rps15/hypothetical protein/ndhF/rpl32/tRNA-Leu/ccsA/ndhD/psaC/ndhE/ndhG/ndhI/ndhA/ndhH/rps15/hypothetical protein/tRNA-Asn/hypothetical protein/tRNA-Arg/5S ribosomal RNA/4.5S ribosomal RNA/23S ribosomal RNA/tRNA-Ala/tRNA-Ile/hypothetical protein/16S ribosomal RNA/tRNA-Val/hypothetical protein/hypothetical protein	rps7	IRa	126646	126703	58
+NC_001320.1	IGS_rps7-ndhB	rps7	ndhB	IRa	127175	127478	304
+NC_001320.1	IGS_ndhB-tRNA-Leu/hypothetical protein	ndhB	tRNA-Leu/hypothetical protein	IRa	129724	130326	603
+NC_001320.1	IGS_tRNA-Leu/hypothetical protein-hypothetical protein	tRNA-Leu/hypothetical protein	hypothetical protein	IRa	131122	131497	376
+NC_001320.1	IGS_hypothetical protein-tRNA-Ile	hypothetical protein	tRNA-Ile	IRa	131585	131905	321
+NC_001320.1	IGS_tRNA-Ile-rpl23	tRNA-Ile	rpl23	IRa	131980	132153	174
+NC_001320.1	IGS_rpl23-rpl2/hypothetical protein	rpl23	rpl2/hypothetical protein	IRa	132436	132453	18
+NC_001320.1	IGS_rpl2/hypothetical protein-tRNA-His	rpl2/hypothetical protein	tRNA-His	IRa	133939	133990	52
+NC_001320.1	IGS_tRNA-His-rps19	tRNA-His	rps19	IRa	134069	134199	131
+NC_001320.1	rps19_to_terminus	rps19	terminus	IRa	134482	134525	44
