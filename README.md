@@ -71,8 +71,8 @@ This project integrates computational population genomics, coalescent theory, an
 - [ ] Compute genomic relationship matrix (GRM / Kinship $K$) and run Principal Component Analysis (PCA)
 - [ ] Model ancestral admixture proportions (ADMIXTURE / fastSTRUCTURE, $K = 2\dots8$) and generate stacked barplots
 - [ ] Generate 2D/3D UMAP manifold embeddings colored by varietal groups and geographic provenance
-- [ ] Reconstruct maximum-likelihood and Bayesian plastid phylogenetic trees (IQ-TREE / BEAST)
-- [ ] Build median-joining haplotype networks (TCS / PopART) resolving maternal sub-lineages
+- [x] Reconstruct maternal plastid phylogenetic trees rooted on basal *O. punctata* with 100 bootstrap replicates ([`scripts/reconstruct_phylogeny_and_network.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/reconstruct_phylogeny_and_network.py), [`results/tables/rice_maternal_plastome_tree.nwk`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/rice_maternal_plastome_tree.nwk), [`results/figures/fig5_maternal_plastid_phylogeny.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig5_maternal_plastid_phylogeny.pdf))
+- [x] Build median-joining haplotype networks resolving 28 maternal lineages and mutational steps ([`results/tables/plastome_haplotypes.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_haplotypes.tsv), [`results/figures/fig6_maternal_haplotype_network.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig6_maternal_haplotype_network.pdf), [`results/plastome_phylogeny_haplotype_network_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/plastome_phylogeny_haplotype_network_report.md))
 - [ ] Quantify cytonuclear discordance by projecting nuclear Q-matrices against plastome clades
 
 ### Phase 4: Genome-Wide Association Studies (GWAS) & Adaptive Evolution

@@ -159,3 +159,78 @@ def test_hypothesis_h2_candidate_genes():
         row = match.iloc[0]
         assert row["Is_H2_Target"] or gene.startswith("ndh"), f"{gene} not flagged as H2 target."
         assert row["Callable_bp"] > 0, f"{gene} has invalid callable length."
+
+
+# ==============================================================================
+# 5. Subtask 3.2 Phylogeny & Haplotype Network Tests
+# ==============================================================================
+
+def test_subtask3_2_deliverables_exist():
+    """Verify all Subtask 3.2 trees, network tables, and figures exist and are non-empty."""
+    tree_files = [
+        "results/tables/rice_maternal_plastome_tree.nwk",
+        "results/tables/rice_maternal_plastome_tree.nex",
+        "results/tables/rice_maternal_plastome_tree.xml",
+        "data/processed/phylogeny/rice_maternal_plastome_tree.nwk",
+    ]
+    for tf in tree_files:
+        assert os.path.exists(tf), f"Tree file {tf} missing."
+        assert os.path.getsize(tf) > 100, f"Tree file {tf} is unexpectedly small."
+
+    network_tables = [
+        "results/tables/plastome_haplotypes.tsv",
+        "results/tables/plastome_network_nodes.tsv",
+        "results/tables/plastome_network_edges.tsv",
+    ]
+    for tbl in network_tables:
+        assert os.path.exists(tbl), f"Network table {tbl} missing."
+        df = pd.read_csv(tbl, sep="\t")
+        assert len(df) > 0, f"Table {tbl} is empty."
+
+    figures = [
+        "results/figures/fig5_maternal_plastid_phylogeny.pdf",
+        "results/figures/fig5_maternal_plastid_phylogeny.png",
+        "results/figures/fig6_maternal_haplotype_network.pdf",
+        "results/figures/fig6_maternal_haplotype_network.png",
+    ]
+    for fig in figures:
+        assert os.path.exists(fig), f"Publication figure {fig} missing."
+        assert os.path.getsize(fig) > 1000, f"Figure {fig} has abnormally small size."
+
+
+def test_tree_topology_and_taxa():
+    """Verify tree leaf count equals 109 taxa and contains outgroup species."""
+    import Bio.Phylo as Phylo
+    tree = Phylo.read("results/tables/rice_maternal_plastome_tree.nwk", "newick")
+    terminals = tree.get_terminals()
+    assert len(terminals) == 109, f"Expected 109 leaf taxa in tree, got {len(terminals)}"
+
+    term_names = {t.name for t in terminals}
+    # Verify presence of reference and outgroup species
+    assert "NC_001320.1" in term_names, "Nipponbare reference missing from tree."
+    assert "LC907692.1" in term_names, "Oryza punctata basal outgroup missing from tree."
+    assert "NC_017835.1" in term_names, "Oryza rufipogon missing from tree."
+
+
+def test_haplotype_catalog_invariants():
+    """Verify haplotype extraction completeness and graph network connectivity."""
+    df_haps = pd.read_csv("results/tables/plastome_haplotypes.tsv", sep="\t")
+    assert len(df_haps) == 28, f"Expected 28 maternal haplotypes, got {len(df_haps)}"
+
+    # Check sum of accessions equals total Sativa cohort (90)
+    total_acc = df_haps["Accession_Count"].sum()
+    assert total_acc == 90, f"Total accessions across haplotypes ({total_acc}) != 90."
+
+    # Check frequency percentage sum
+    freq_sum = df_haps["Frequency_Pct"].sum()
+    assert np.isclose(freq_sum, 100.0, atol=0.1), f"Frequency sum ({freq_sum}) != 100%."
+
+    # Check network connectivity: MST of 28 nodes must have exactly 27 edges
+    df_nodes = pd.read_csv("results/tables/plastome_network_nodes.tsv", sep="\t")
+    df_edges = pd.read_csv("results/tables/plastome_network_edges.tsv", sep="\t")
+    assert len(df_nodes) == 28, f"Expected 28 nodes, got {len(df_nodes)}"
+    assert len(df_edges) == 27, f"Expected 27 edges (V - 1), got {len(df_edges)}"
+
+    # Edge weights must be non-negative mutational steps
+    assert (df_edges["Mutational_Steps"] >= 0).all(), "Found negative mutational steps in network edges."
+
