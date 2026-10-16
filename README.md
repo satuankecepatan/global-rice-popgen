@@ -180,6 +180,7 @@ python scripts\call_and_polarize_variants.py
 # 5. Phase 3: Population diversity, divergence, phylogeny & haplotype networks
 python scripts\compute_diversity_and_divergence.py
 python scripts\reconstruct_phylogeny_and_network.py
+python scripts\compute_population_structure.py
 ```
 
 ---
@@ -295,7 +296,24 @@ All summary statistics are calculated as linear combinations of the unfolded Sit
   *Citation:* Bandelt, Forster, & Röhl (1999) *Mol Biol Evol* [[DOI](https://doi.org/10.1093/oxfordjournals.molbev.a026036)]  
   *Script:* [`scripts/reconstruct_phylogeny_and_network.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/reconstruct_phylogeny_and_network.py)
 
-### 8.6. Association Mapping, Population Structure & Multiple Testing
+### 8.6. Linkage Disequilibrium Pruning, Kinship & Manifold Projections
+
+* **Physical Sliding-Window LD Pruning ($r^2 < 0.2$):**  
+  To eliminate collinear redundancies along the non-recombining plastome while preserving independent tag markers across compartments, variants with $\text{MAF} \ge 0.02$ are pruned within physical windows ($W_{\text{bp}} = 20,000\text{ bp}$) when pairwise squared Pearson correlation satisfies $r^2 \ge 0.20$. This collapses large structural rearrangements (such as the 12.5 kb SSC structural isomer) into independent tag variants.  
+  *Script:* [`scripts/compute_population_structure.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/compute_population_structure.py)
+* **Realized Genomic Relationship Matrix (Kinship $K$):**  
+  Normalized covariance matrix computed via the VanRaden (2008) / Patterson et al. (2006) estimator:
+  $$\mathbf{K} = \frac{1}{M} \mathbf{W}\mathbf{W}^T, \qquad W_{ik} = \frac{G_{ik} - p_k}{\sqrt{p_k(1 - p_k)}}$$
+  where $\mathbf{K} \in \mathbb{R}^{N \times N}$, $\mathbf{K} = \mathbf{K}^T$, and $\mathbb{E}[\text{diag}(\mathbf{K})] = 1.0$.  
+  *Citations:* VanRaden (2008) *J Dairy Sci* [[DOI](https://doi.org/10.3168/jds.2007-0980)]; Patterson, Price, & Reich (2006) *PLOS Genet* [[DOI](https://doi.org/10.1371/journal.pgen.0020190)]
+* **Principal Component Analysis (PCA) & Eigendecomposition:**  
+  Exact SVD decomposition of standardized genotypes extracting eigenvalues, variance explained percentages, and principal coordinates ($C = U\Sigma$).  
+* **Non-Linear Manifold Projections (UMAP):**  
+  Preservation of both local neighborhoods and global topological relationships in 2D and 3D manifold embeddings.  
+  *Citation:* McInnes, Healy, & Melville (2018) *arXiv preprint arXiv:1802.03426*  
+  *Script:* [`scripts/compute_population_structure.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/compute_population_structure.py)
+
+### 8.7. Association Mapping, Population Structure & Multiple Testing
 
 * **Linear Mixed Models (LMM / MLM for GWAS):**  
   To control for cryptic relatedness and hierarchical population structure when mapping adaptive traits, phenotypes are modeled with fixed population covariates ($Q$ matrix or Principal Components) and random polygenic kinship ($K$):

@@ -234,3 +234,96 @@ def test_haplotype_catalog_invariants():
     # Edge weights must be non-negative mutational steps
     assert (df_edges["Mutational_Steps"] >= 0).all(), "Found negative mutational steps in network edges."
 
+
+# ==============================================================================
+# 6. Subtask 3.3 Population Structure, Kinship & Manifold Tests
+# ==============================================================================
+
+def test_subtask3_3_deliverables_exist():
+    """Verify all Subtask 3.3 tabular files and publication figures exist and are non-empty."""
+    tables = [
+        "results/tables/plastome_snps_ld_pruned.tsv",
+        "results/tables/plastome_kinship_matrix.tsv",
+        "results/tables/plastome_pca_eigenvalues.tsv",
+        "results/tables/plastome_pca_coordinates.tsv",
+        "results/tables/plastome_pca_loadings.tsv",
+        "results/tables/plastome_umap_coordinates.tsv",
+    ]
+    for tbl in tables:
+        assert os.path.exists(tbl), f"Deliverable table {tbl} is missing."
+        df = pd.read_csv(tbl, sep="\t")
+        assert len(df) > 0, f"Table {tbl} is empty."
+
+    figures = [
+        "results/figures/fig7_plastome_pca_structure.pdf",
+        "results/figures/fig7_plastome_pca_structure.png",
+        "results/figures/fig8_plastome_umap_kinship.pdf",
+        "results/figures/fig8_plastome_umap_kinship.png",
+    ]
+    for fig in figures:
+        assert os.path.exists(fig), f"Publication figure {fig} missing."
+        assert os.path.getsize(fig) > 1000, f"Figure {fig} has abnormally small size."
+
+
+def test_ld_pruning_invariants():
+    """Verify LD pruning parameters: MAF >= 0.02 and non-empty independent SNP subset."""
+    df_pruned = pd.read_csv("results/tables/plastome_snps_ld_pruned.tsv", sep="\t")
+    assert len(df_pruned) == 20, f"Expected 20 independent tag SNPs, got {len(df_pruned)}"
+    assert (df_pruned["MAF"] >= 0.02 - 1e-6).all(), "Found SNPs violating min_maf >= 0.02 filter."
+    assert (df_pruned["POS"] > 0).all(), "Found invalid SNP genomic position."
+
+
+def test_kinship_matrix_properties():
+    """Verify VanRaden/Patterson Kinship matrix is symmetric, 90x90, with valid diagonal self-relationships."""
+    df_k = pd.read_csv("results/tables/plastome_kinship_matrix.tsv", sep="\t", index_col=0)
+    assert df_k.shape == (90, 90), f"Kinship matrix shape {df_k.shape} != (90, 90)."
+
+    # Matrix symmetry: K == K^T
+    K = df_k.values
+    assert np.allclose(K, K.T, atol=1e-10), "Kinship matrix K is not symmetric (K != K^T)."
+
+    # Diagonal self-relationship properties
+    diag_vals = np.diag(K)
+    assert (diag_vals > 0).all(), "Found non-positive diagonal entries in K."
+    mean_diag = np.mean(diag_vals)
+    assert np.isclose(mean_diag, 1.0, atol=0.1), f"Mean diagonal self-relationship ({mean_diag:.4f}) deviates substantially from 1.0."
+
+
+def test_pca_decomposition_invariants():
+    """Verify PCA eigenvalues are descending, variance ratios sum to cumulative variance, and top PCs explain major variance."""
+    df_eval = pd.read_csv("results/tables/plastome_pca_eigenvalues.tsv", sep="\t")
+    assert len(df_eval) == 10, f"Expected 10 principal components, got {len(df_eval)}"
+
+    # Eigenvalues must be strictly non-negative and descending
+    eigenvalues = df_eval["Eigenvalue"].values
+    assert (eigenvalues >= 0).all(), "Found negative eigenvalues in eigendecomposition."
+    assert (np.diff(eigenvalues) <= 1e-8).all(), "Eigenvalues are not sorted in descending order."
+
+    # Variance explained consistency
+    var_pct = df_eval["Variance_Explained_Pct"].values
+    cum_pct = df_eval["Cumulative_Variance_Pct"].values
+    assert np.allclose(np.cumsum(var_pct), cum_pct, atol=1e-3), "Cumulative variance does not match sum of individual variance components."
+
+    # Biological expectation: plastome has structured variation, top 2 PCs explain substantial variance
+    assert cum_pct[1] > 45.0, f"Top 2 PCs explain only {cum_pct[1]:.2f}% variance (expected >45%)."
+
+    # PCA coordinates
+    df_coord = pd.read_csv("results/tables/plastome_pca_coordinates.tsv", sep="\t")
+    assert len(df_coord) == 90, f"Expected 90 accessions in PCA coordinates, got {len(df_coord)}"
+    for i in range(1, 11):
+        assert f"PC{i}" in df_coord.columns, f"PC{i} column missing from coordinates."
+        assert not df_coord[f"PC{i}"].isna().any(), f"Found NaN values in PC{i}."
+
+
+def test_umap_manifold_embeddings():
+    """Verify 2D and 3D UMAP manifold coordinates exist for all 90 accessions with no NaNs."""
+    df_umap = pd.read_csv("results/tables/plastome_umap_coordinates.tsv", sep="\t")
+    assert len(df_umap) == 90, f"Expected 90 accessions in UMAP table, got {len(df_umap)}"
+
+    cols = ["UMAP1_2D", "UMAP2_2D", "UMAP1_3D", "UMAP2_3D", "UMAP3_3D"]
+    for c in cols:
+        assert c in df_umap.columns, f"Column {c} missing from UMAP coordinates."
+        assert not df_umap[c].isna().any(), f"Found NaN values in UMAP column {c}."
+        assert np.isfinite(df_umap[c].values).all(), f"Found infinite values in UMAP column {c}."
+
+

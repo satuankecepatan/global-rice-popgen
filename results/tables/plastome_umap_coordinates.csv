@@ -1,0 +1,91 @@
+Sample_ID,Cultivar,Varietal_Group,Nation_Origin,Region,UMAP1_2D,UMAP2_2D,UMAP1_3D,UMAP2_3D,UMAP3_3D
+NC_001320.1,Nipponbare,Japonica,Japan,East_Asia,33.870167,20.1533,-8.65923,-12.116802,4.8887267
+AP006728.1,Wild form (O. sativa f. spontanea / O. nivara),Spontanea,Unspecified,Other_Unspecified,30.045887,-32.2575,-20.073776,0.28359294,-3.8283532
+AY522329.1,93-11,Indica,China,East_Asia,29.616215,-32.67223,-20.744686,-0.027127905,-4.1264467
+AY522330.1,Nipponbare,Japonica,Japan,East_Asia,34.35038,19.65188,-9.061044,-12.323458,4.930339
+AY522331.1,PA64S,Japonica,China,East_Asia,33.734303,20.000631,-9.227217,-12.262667,5.0422964
+CP018170.1,Shuhui498,Indica,China,East_Asia,34.24529,20.067963,-8.958176,-12.218697,5.1033807
+CP054688.1,Minghui 63,Indica,China,East_Asia,30.531248,-31.889162,-19.7141,-0.23030409,-4.0265317
+CP056064.1,Zhenshan 97,Indica,China,East_Asia,30.49638,-32.129795,-19.833054,-0.2518083,-4.1427407
+GU592207.1,Nipponbare,Japonica,Japan,East_Asia,33.83041,20.183752,-8.907288,-11.908133,4.8194895
+JN861109.1,Hassawi,Indica,Saudi Arabia,Middle_East,29.452599,-32.22745,-20.893087,0.49016255,-4.265951
+JN861110.1,Hassawi,Indica,Saudi Arabia,Middle_East,29.451628,-32.339493,-21.02511,0.17841497,-3.8888903
+KF359901.1,Wild form (O. sativa f. spontanea / O. nivara),Spontanea,China,East_Asia,28.930502,-32.19452,-21.064814,0.5964451,-3.7403438
+KM088016.1,Nipponbare,Japonica,Japan,East_Asia,34.240875,19.988615,-8.564785,-12.404734,5.0293517
+KM088017.1,Yukara,Japonica,Japan,East_Asia,33.955997,19.67313,-9.144298,-12.300609,4.613772
+KM088022.1,Wild form (O. sativa f. spontanea / O. nivara),Spontanea,South Korea,East_Asia,30.104763,-32.5687,-20.381203,0.10040399,-4.051492
+KM103367.1,IR8,Indica,Philippines (IRRI),South_Southeast_Asia,29.056133,-32.427704,-21.192892,0.117642246,-4.165311
+KM103368.1,IR8,Indica,Philippines (IRRI),South_Southeast_Asia,29.553217,-32.007126,-20.676195,0.44715682,-3.6307304
+KM103369.1,TN1,Other_Sativa,Taiwan,East_Asia,29.134531,-32.53208,-20.898348,0.28706744,-3.556574
+KM103382.1,Milyang 23,Indica,South Korea,East_Asia,34.044655,19.68354,-8.796586,-11.76547,5.1523647
+KT289403.1,basmati,Aromatic,Pakistan / India,South_Southeast_Asia,29.44848,-33.10539,-20.815401,-0.108291276,-4.4156814
+KT289404.1,Not specified,Japonica,China,East_Asia,6.5203424,-6.2218833,-7.634205,18.944859,16.565659
+KU705873.1,RP Bio-226,Indica,India,South_Southeast_Asia,29.197191,-32.6785,-21.25576,0.21916187,-3.723125
+LC739565.1,Taichung 65,Japonica,Taiwan / Japan,East_Asia,34.145664,19.911201,-8.694578,-12.614621,4.800121
+MG252500.1,N22,Other_Sativa,India,South_Southeast_Asia,29.005407,-32.84087,-20.845827,0.4933241,-3.9397917
+MK348618.1,Jingeng 818,Other_Sativa,China,East_Asia,5.7723727,-5.723734,-7.4865174,19.009398,16.37567
+MT653617.1,HSAGSDYD1802 (Yellow mutant),Other_Sativa,China,East_Asia,29.547092,-33.06431,-20.559738,0.50914997,-4.2514234
+MT712789.1,Wild form (O. sativa f. spontanea / O. nivara),Spontanea,China,East_Asia,29.750042,-32.510204,-20.52936,0.29189757,-4.0404315
+MW001303.1,Not specified,Japonica,China,East_Asia,-9.957016,25.360363,12.180187,4.4708166,10.105759
+MZ424305.1,SR86,Other_Sativa,China,East_Asia,29.282862,-32.981262,-20.636871,0.035555482,-3.7163405
+NC_005973.1,Wild form (O. sativa f. spontanea / O. nivara),Spontanea,Unspecified,Other_Unspecified,30.101465,-32.167774,-20.02515,0.21363592,-3.8355772
+NC_008155.1,93-11,Indica,China,East_Asia,29.727581,-32.676437,-20.897861,-0.2379482,-3.9119122
+NC_031333.1,TN1,Other_Sativa,Taiwan,East_Asia,29.131802,-32.171783,-21.08937,0.7059454,-3.8629682
+OP729774.2,Pin Gaew 56,Indica,Thailand,South_Southeast_Asia,-9.837347,25.049511,12.337672,4.6008925,10.290953
+PX059446.1,Line line AA 31223 PR 26243-6-6,Indica,Russia,Northern_Margin_Russia,29.998491,-32.888805,-20.49325,-0.41964728,-4.3006635
+PX059447.1,Gagat,Indica,Russia,Northern_Margin_Russia,29.881859,-33.14748,-20.506435,-0.093007214,-4.6827183
+PX059448.1,Yuzhnaya noch,Japonica,Russia,Northern_Margin_Russia,-9.446073,25.575468,12.260485,5.094592,10.3763275
+PX059449.1,Mavr,Japonica,Russia,Northern_Margin_Russia,6.903588,-6.2124133,-7.4442005,18.710438,16.757187
+PX059450.1,Svetlana,Indica,Russia,Northern_Margin_Russia,7.113682,-6.0168943,-7.3510637,19.067484,16.702734
+PX059451.1,Romans,Japonica,Russia,Northern_Margin_Russia,6.643812,-6.3105783,-7.169688,18.963783,16.57837
+PX059452.1,Flagman,Japonica,Russia,Northern_Margin_Russia,7.0150886,-5.670749,-7.685652,19.049232,16.603914
+PX059453.1,Lider,Japonica,Russia,Northern_Margin_Russia,33.43516,20.03361,-8.66394,-12.218261,4.6305285
+PX059454.1,Line line IRBLta-CP1,Japonica,Russia,Northern_Margin_Russia,6.791924,-5.773165,-7.7159142,18.52805,16.675838
+PX059455.1,Patriot,Japonica,Russia,Northern_Margin_Russia,6.8665395,-5.737669,-7.0609355,18.434774,16.33624
+PX059456.1,Snezhinka,Indica,Russia,Northern_Margin_Russia,6.6943374,-5.9755445,-7.1209664,18.395206,16.655125
+PX059457.1,Azovskij,Japonica,Russia,Northern_Margin_Russia,-9.324459,25.481031,12.307711,4.81953,10.357486
+PX059458.1,Kenddao 8,Japonica,Russia,Northern_Margin_Russia,33.78711,19.62121,-8.892743,-11.905936,4.92262
+PX059459.1,Line line IR 11 t261,Indica,Russia,Northern_Margin_Russia,28.740639,-32.596355,-21.149979,0.3738138,-4.1336217
+PX059460.1,Krasnozernaya forma 7,Japonica,Russia,Northern_Margin_Russia,6.1606526,-5.7374287,-7.3275547,18.293087,16.60305
+PX059461.1,CRLB 1,Indica,Russia,Northern_Margin_Russia,-9.75974,25.47099,12.321708,4.93671,10.296584
+PX059462.1,Line line VNIIR 6189,Japonica,Russia,Northern_Margin_Russia,6.541939,-5.9670835,-6.94038,18.877045,16.829302
+PX059463.1,Kurazh,Japonica,Russia,Northern_Margin_Russia,33.741413,19.364944,-8.921168,-12.584906,4.635635
+PX059464.1,Line Dihaploid line Dihaploid lk/1-d10,Japonica,Russia,Northern_Margin_Russia,33.482,19.596224,-8.485566,-12.049789,5.156812
+PX059465.1,Chernye glaza,Japonica,Russia,Northern_Margin_Russia,6.0920596,-6.2114024,-7.5451794,18.54184,16.35442
+PX059466.1,Cammeo,Japonica,Russia,Northern_Margin_Russia,33.58879,19.83575,-8.678349,-12.476606,5.47737
+PX059467.1,Yakhont,Japonica,Russia,Northern_Margin_Russia,6.3599367,-5.3445544,-7.228235,18.89917,17.213501
+PX059468.1,Khazar,Japonica,Russia,Northern_Margin_Russia,6.288937,-5.538961,-7.4096546,18.601648,16.190834
+PX059469.1,Novoselskij,Japonica,Russia,Northern_Margin_Russia,29.739151,-33.36132,-20.552025,-0.4652661,-4.554893
+PX059470.1,Kaz NIIR-5,Japonica,Russia,Northern_Margin_Russia,6.148634,-5.945239,-7.7511797,18.978613,17.03098
+PX059471.1,Line line IRBL T-K59,Japonica,Russia,Northern_Margin_Russia,33.56427,20.274893,-8.901318,-12.018753,4.6081285
+PX059472.1,Khaw-sri-nin,Indica,Russia,Northern_Margin_Russia,-9.797895,25.66161,11.925192,4.8506746,10.341915
+PX059473.1,Line line VNIIR 6523,Japonica,Russia,Northern_Margin_Russia,6.8671517,-6.6045594,-7.783305,18.730465,16.774384
+PX059474.1,Line Dihaploid line Dihaploid lo-2327-10,Japonica,Russia,Northern_Margin_Russia,34.455574,19.487513,-9.215326,-12.603337,4.9239745
+PX059475.1,Line line AA 13886/12 PSB Rc 10,Japonica,Russia,Northern_Margin_Russia,-9.6599655,25.04919,12.2531185,4.70983,9.995753
+PX059476.1,Atlant,Japonica,Russia,Northern_Margin_Russia,34.155884,19.300993,-9.026839,-11.936545,5.3586736
+PX059477.1,Aral 7,Japonica,Russia,Northern_Margin_Russia,6.6397,-6.364269,-7.4330816,19.284948,17.118618
+PX059478.1,Don 7113,Indica,Russia,Northern_Margin_Russia,6.1238203,-6.396248,-7.625847,18.512112,17.086824
+PX059479.1,Line line VNIIR 10163,Japonica,Russia,Northern_Margin_Russia,34.181076,20.432198,-9.210557,-12.120425,5.4533706
+PX059480.1,Veles,Japonica,Russia,Northern_Margin_Russia,33.8588,19.398201,-8.552117,-12.058096,5.3143716
+PX059481.1,Line line VNIIR 9714,Japonica,Russia,Northern_Margin_Russia,7.304934,-5.993755,-7.1823454,18.553854,17.096556
+PX059482.1,Line Dihaploid line Dihaploid lo/76-270/4,Japonica,Russia,Northern_Margin_Russia,5.938008,-5.883626,-7.369273,18.332169,17.051744
+PX059483.1,Fielote,Japonica,Russia,Northern_Margin_Russia,6.75133,-5.1853747,-6.7723036,18.569956,16.673697
+PX059484.1,Azerbajdzhanskij,Japonica,Russia,Northern_Margin_Russia,-9.686783,25.646112,12.00281,4.7652044,10.568876
+PX059485.1,Mars,Indica,Russia,Northern_Margin_Russia,33.727013,19.12673,-9.283253,-11.98576,4.6900597
+PX059486.1,ZHONG FV 906,Japonica,Russia,Northern_Margin_Russia,29.585846,-32.79707,-20.665268,0.20861419,-4.511292
+PX059487.1,Avangard,Japonica,Russia,Northern_Margin_Russia,6.6018496,-5.6216865,-7.038209,18.653757,16.326466
+PX059488.1,"Line Dihaploid line Dihaploid Heibar, lo/60",Japonica,Russia,Northern_Margin_Russia,7.0061545,-6.4780107,-7.267712,18.78051,16.020142
+PX059489.1,Line line PV-1 GR 75499-84,Japonica,Russia,Northern_Margin_Russia,-10.02813,25.265799,12.180484,4.8536572,10.66407
+PX059490.1,Ruille,Indica,Russia,Northern_Margin_Russia,34.494003,19.684652,-8.945521,-12.724822,5.1784377
+PX059491.1,Arroz Buit,Indica,Russia,Northern_Margin_Russia,-9.477965,25.370953,12.30242,4.567205,10.391782
+PX059492.1,Dular,Japonica,Russia,Northern_Margin_Russia,30.049852,-33.256756,-20.806332,-0.41882533,-4.0555058
+PX059493.1,Favorite,Japonica,Russia,Northern_Margin_Russia,7.191786,-5.567307,-7.4657664,18.899666,17.00196
+PX059494.1,Oceano,Indica,Russia,Northern_Margin_Russia,6.360838,-6.647922,-7.124111,19.217426,16.238592
+PX059495.1,Zlata,Indica,Russia,Northern_Margin_Russia,5.7362657,-6.044852,-7.7288113,18.239561,16.27377
+PX059496.1,Elbrus,Japonica,Russia,Northern_Margin_Russia,6.2750072,-6.0908427,-8.052526,18.511776,16.686052
+PX059497.1,Line line ##04466,Japonica,Russia,Northern_Margin_Russia,-9.530785,25.180088,11.926698,4.5299945,10.276216
+PX059498.1,Viola,Japonica,Russia,Northern_Margin_Russia,34.497097,20.048677,-8.722884,-12.508045,5.0772834
+PX059499.1,Tai Bonnet,Indica,Russia,Northern_Margin_Russia,-9.726266,25.264643,12.024951,4.858927,10.1704
+PX059500.1,Rubin,Japonica,Russia,Northern_Margin_Russia,6.3720984,-5.655755,-7.8722434,18.978271,16.289392
+PX059501.1,Saw-An-T,Japonica,Russia,Northern_Margin_Russia,6.7336044,-5.400097,-7.0101156,19.322004,16.731663
+PX733955.1,Not specified,Other_Sativa,China,East_Asia,30.185286,-33.060654,-20.460258,-0.29356638,-4.4148583
