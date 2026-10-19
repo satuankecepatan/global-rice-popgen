@@ -1,0 +1,91 @@
+Sample_ID,Cultivar,Varietal_Group,Region,Nation_Origin,Plastome_Clade,Plastome_Q_Japonica,Plastome_Q_Indica,Nuclear_Subpopulation,Nuclear_Q_Japonica,Nuclear_Q_Indica,Nuclear_Q_Aus,Nuclear_Q_Aromatic,Cytonuclear_Discordance_Index,Discordance_Category,Chloroplast_Capture_Event,Nuclear_Primary_Group
+NC_001320.1,Nipponbare,Japonica,East_Asia,Japan,Japonica,1.0,0.0,Temperate japonica,1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+AP006728.1,Wild form (O. sativa f. spontanea / O. nivara),Spontanea,Other_Unspecified,Unspecified,Spontanea_Wild,0.0,1.0,Wild Rufipogon/Nivara,0.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Wild_Other
+AY522329.1,93-11,Indica,East_Asia,China,Aus_Intermediate,0.0,1.0,Indica,0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+AY522330.1,Nipponbare,Japonica,East_Asia,Japan,Japonica,1.0,0.0,Temperate japonica,1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+AY522331.1,PA64S,Japonica,East_Asia,China,Japonica,1.0,0.0,Indica,0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+CP018170.1,Shuhui498,Indica,East_Asia,China,Japonica,1.0,0.0,Indica,0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+CP054688.1,Minghui 63,Indica,East_Asia,China,Indica,0.0,1.0,Indica admixed,0.0382,0.9618,0.0,0.0,0.0382,Concordant,None (Concordant Lineage),Indica
+CP056064.1,Zhenshan 97,Indica,East_Asia,China,Aus_Intermediate,0.0,1.0,Indica,0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+GU592207.1,Nipponbare,Japonica,East_Asia,Japan,Japonica,1.0,0.0,Temperate japonica,1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+JN861109.1,Hassawi,Indica,Middle_East,Saudi Arabia,Aus_Intermediate,0.0,1.0,Indica Group (Passport),0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+JN861110.1,Hassawi,Indica,Middle_East,Saudi Arabia,Aus_Intermediate,0.0,1.0,Indica Group (Passport),0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+KF359901.1,Wild form (O. sativa f. spontanea / O. nivara),Spontanea,East_Asia,China,Spontanea_Wild,0.0,1.0,Wild Rufipogon/Nivara,0.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Wild_Other
+KM088016.1,Nipponbare,Japonica,East_Asia,Japan,Japonica,1.0,0.0,Temperate japonica,1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+KM088017.1,Yukara,Japonica,East_Asia,Japan,Japonica,1.0,0.0,Temperate japonica,1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+KM088022.1,Wild form (O. sativa f. spontanea / O. nivara),Spontanea,East_Asia,South Korea,Spontanea_Wild,0.0,1.0,Wild Rufipogon/Nivara,0.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Wild_Other
+KM103367.1,IR8,Indica,South_Southeast_Asia,Philippines (IRRI),Aus_Intermediate,0.0,1.0,Indica,0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+KM103368.1,IR8,Indica,South_Southeast_Asia,Philippines (IRRI),Aus_Intermediate,0.0,1.0,Indica,0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+KM103369.1,TN1,Other_Sativa,East_Asia,Taiwan,Aus_Intermediate,0.0,1.0,Indica 1A,0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+KM103382.1,Milyang 23,Indica,East_Asia,South Korea,Japonica,1.0,0.0,admix,0.4641,0.5359,0.0,0.0,0.5359,Admixed_Introgression,Historical Hybrid Introgression,Wild_Other
+KT289403.1,basmati,Aromatic,South_Southeast_Asia,Pakistan / India,Aus_Intermediate,0.0,1.0,Indica 1B,0.0858,0.8955,0.0003,0.0184,0.0858,Concordant,None (Concordant Lineage),Indica
+KT289404.1,Not specified,Japonica,East_Asia,China,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+KU705873.1,RP Bio-226,Indica,South_Southeast_Asia,India,Aus_Intermediate,0.0,1.0,Indica Group (Passport),0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+LC739565.1,Taichung 65,Japonica,East_Asia,Taiwan / Japan,Japonica,1.0,0.0,Temperate japonica,1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+MG252500.1,N22,Other_Sativa,South_Southeast_Asia,India,Aus_Intermediate,0.0,1.0,Aus,0.0,0.0,1.0,0.0,0.0,Concordant,None (Concordant Lineage),Aus
+MK348618.1,Jingeng 818,Other_Sativa,East_Asia,China,Indica,1.0,0.0,Other Sativa,0.0,0.0,0.0,0.0,1.0,Chloroplast_Capture,Chloroplast Capture,Wild_Other
+MT653617.1,HSAGSDYD1802 (Yellow mutant),Other_Sativa,East_Asia,China,Aus_Intermediate,0.0,1.0,Other Sativa,0.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Wild_Other
+MT712789.1,Wild form (O. sativa f. spontanea / O. nivara),Spontanea,East_Asia,China,Aus_Intermediate,0.0,1.0,Wild Rufipogon/Nivara,0.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Wild_Other
+MW001303.1,Not specified,Japonica,East_Asia,China,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+MZ424305.1,SR86,Other_Sativa,East_Asia,China,Aus_Intermediate,0.0,1.0,Other Sativa,0.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Wild_Other
+NC_005973.1,Wild form (O. sativa f. spontanea / O. nivara),Spontanea,Other_Unspecified,Unspecified,Spontanea_Wild,0.0,1.0,Wild Rufipogon/Nivara,0.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Wild_Other
+NC_008155.1,93-11,Indica,East_Asia,China,Aus_Intermediate,0.0,1.0,Indica,0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+NC_031333.1,TN1,Other_Sativa,East_Asia,Taiwan,Aus_Intermediate,0.0,1.0,Indica 1A,0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+OP729774.2,Pin Gaew 56,Indica,South_Southeast_Asia,Thailand,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059446.1,Line line AA 31223 PR 26243-6-6,Indica,Northern_Margin_Russia,Russia,Aus_Intermediate,0.0,1.0,Indica Group (Passport),0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+PX059447.1,Gagat,Indica,Northern_Margin_Russia,Russia,Aus_Intermediate,0.0,1.0,Indica Group (Passport),0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+PX059448.1,Yuzhnaya noch,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059449.1,Mavr,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059450.1,Svetlana,Indica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059451.1,Romans,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059452.1,Flagman,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059453.1,Lider,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059454.1,Line line IRBLta-CP1,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059455.1,Patriot,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059456.1,Snezhinka,Indica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059457.1,Azovskij,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059458.1,Kenddao 8,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059459.1,Line line IR 11 t261,Indica,Northern_Margin_Russia,Russia,Aus_Intermediate,0.0,1.0,Indica Group (Passport),0.0,1.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Indica
+PX059460.1,Krasnozernaya forma 7,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059461.1,CRLB 1,Indica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059462.1,Line line VNIIR 6189,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059463.1,Kurazh,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059464.1,Line Dihaploid line Dihaploid lk/1-d10,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059465.1,Chernye glaza,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059466.1,Cammeo,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059467.1,Yakhont,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059468.1,Khazar,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica admixed,0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059469.1,Novoselskij,Japonica,Northern_Margin_Russia,Russia,Aus_Intermediate,0.0,1.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Indica Capture in Nuclear Japonica,Japonica
+PX059470.1,Kaz NIIR-5,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059471.1,Line line IRBL T-K59,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059472.1,Khaw-sri-nin,Indica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059473.1,Line line VNIIR 6523,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059474.1,Line Dihaploid line Dihaploid lo-2327-10,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059475.1,Line line AA 13886/12 PSB Rc 10,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059476.1,Atlant,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059477.1,Aral 7,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059478.1,Don 7113,Indica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059479.1,Line line VNIIR 10163,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059480.1,Veles,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059481.1,Line line VNIIR 9714,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059482.1,Line Dihaploid line Dihaploid lo/76-270/4,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059483.1,Fielote,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059484.1,Azerbajdzhanskij,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059485.1,Mars,Indica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059486.1,ZHONG FV 906,Japonica,Northern_Margin_Russia,Russia,Aus_Intermediate,0.0,1.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Indica Capture in Nuclear Japonica,Japonica
+PX059487.1,Avangard,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059488.1,"Line Dihaploid line Dihaploid Heibar, lo/60",Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059489.1,Line line PV-1 GR 75499-84,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059490.1,Ruille,Indica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059491.1,Arroz Buit,Indica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059492.1,Dular,Japonica,Northern_Margin_Russia,Russia,Aus_Intermediate,0.0,1.0,Aus,0.0,0.0,1.0,0.0,0.0,Concordant,None (Concordant Lineage),Aus
+PX059493.1,Favorite,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Temperate japonica,1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059494.1,Oceano,Indica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059495.1,Zlata,Indica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059496.1,Elbrus,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059497.1,Line line ##04466,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Japonica Group (Passport),1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059498.1,Viola,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Temperate japonica,1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059499.1,Tai Bonnet,Indica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Indica Group (Passport),0.0,1.0,0.0,0.0,1.0,Chloroplast_Capture,Maternal Japonica Capture in Nuclear Indica,Indica
+PX059500.1,Rubin,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Temperate japonica,1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX059501.1,Saw-An-T,Japonica,Northern_Margin_Russia,Russia,Japonica,1.0,0.0,Temperate japonica,1.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Japonica
+PX733955.1,Not specified,Other_Sativa,East_Asia,China,Aus_Intermediate,0.0,1.0,Other Sativa,0.0,0.0,0.0,0.0,0.0,Concordant,None (Concordant Lineage),Wild_Other

@@ -70,13 +70,13 @@ This project integrates computational population genomics, coalescent theory, an
 
 - [x] Calculate unbiased diversity statistics ($\hat{\pi}$, $\hat{\theta}_W$, Tajima's $D$, Fay & Wu's $H$) using exact callable denominators ($L_{\text{callable}}$) ([`scripts/compute_diversity_and_divergence.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/compute_diversity_and_divergence.py), [`results/tables/plastome_diversity_neutrality_summary.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_diversity_neutrality_summary.tsv), [`results/plastome_diversity_divergence_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/plastome_diversity_divergence_report.md))
 * [x] Compute pairwise population differentiation (Hudson's $\hat{F}_{ST}$, $d_{XY}$, $d_A$) across varietal groups and regions with delete-$m_b$ weighted block jackknife ([`results/tables/plastome_pairwise_divergence_fst.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_pairwise_divergence_fst.tsv), [`results/figures/fig1_plastome_diversity_neutrality.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig1_plastome_diversity_neutrality.pdf), [`results/figures/fig3_pairwise_differentiation_heatmaps.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig3_pairwise_differentiation_heatmaps.pdf))
-* [ ] Perform LD-pruning of biallelic SNPs ($r^2 < 0.2$) for unbiased population structure inference
-* [ ] Compute genomic relationship matrix (GRM / Kinship $K$) and run Principal Component Analysis (PCA)
-* [ ] Model ancestral admixture proportions (ADMIXTURE / fastSTRUCTURE, $K = 2\dots8$) and generate stacked barplots
-* [ ] Generate 2D/3D UMAP manifold embeddings colored by varietal groups and geographic provenance
+* [x] Perform physical sliding-window LD-pruning ($W_{\text{bp}} = 20\text{ kb}$, $r^2 < 0.2$) extracting 20 independent tag SNPs ([`scripts/compute_population_structure.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/compute_population_structure.py), [`results/tables/plastome_snps_ld_pruned.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_snps_ld_pruned.tsv))
+* [x] Compute VanRaden/Patterson genomic relationship matrix (Kinship $K$, mean diagonal = 1.0353) and run SVD-PCA (PC1 = 30.68%, PC2 = 19.24%, PC3 = 12.29%) ([`results/tables/plastome_kinship_matrix.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_kinship_matrix.tsv), [`results/figures/fig7_plastome_pca_structure.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig7_plastome_pca_structure.pdf))
+* [x] Model ancestral admixture proportions on tag SNPs ($K = 2\dots8$) with 5-fold cross-validation ($K^* = 7$) using Bernoulli EM ([`scripts/compute_admixture_and_cytonuclear_discordance.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/compute_admixture_and_cytonuclear_discordance.py), [`results/tables/plastome_admixture_q_matrices.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_admixture_q_matrices.tsv), [`results/figures/fig9_plastome_admixture_ancestry.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig9_plastome_admixture_ancestry.pdf))
+* [x] Generate 2D/3D UMAP non-linear manifold embeddings colored by varietal groups and geographic provenance ([`results/tables/plastome_umap_coordinates.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_umap_coordinates.tsv), [`results/figures/fig8_plastome_umap_kinship.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig8_plastome_umap_kinship.pdf), [`results/plastome_population_structure_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/plastome_population_structure_report.md))
 * [x] Reconstruct maternal plastid phylogenetic trees rooted on basal *O. punctata* with 100 bootstrap replicates ([`scripts/reconstruct_phylogeny_and_network.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/reconstruct_phylogeny_and_network.py), [`results/tables/rice_maternal_plastome_tree.nwk`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/rice_maternal_plastome_tree.nwk), [`results/figures/fig5_maternal_plastid_phylogeny.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig5_maternal_plastid_phylogeny.pdf))
 * [x] Build median-joining haplotype networks resolving 28 maternal lineages and mutational steps ([`results/tables/plastome_haplotypes.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/plastome_haplotypes.tsv), [`results/figures/fig6_maternal_haplotype_network.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig6_maternal_haplotype_network.pdf), [`results/plastome_phylogeny_haplotype_network_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/plastome_phylogeny_haplotype_network_report.md))
-* [ ] Quantify cytonuclear discordance by projecting nuclear Q-matrices against plastome clades
+* [x] Quantify Cytonuclear Discordance Index ($\text{CDI} = D_{\text{TV}}(Q_{\text{plast}}, Q_{\text{nuc}})$) against 3K RGP nuclear ancestries and map maternal chloroplast capture in northern cultivars ([`results/tables/cytonuclear_discordance_matrix.tsv`](file:///d:/Magister/Proyek/global-rice-popgen/results/tables/cytonuclear_discordance_matrix.tsv), [`results/figures/fig10_cytonuclear_discordance_capture.pdf`](file:///d:/Magister/Proyek/global-rice-popgen/results/figures/fig10_cytonuclear_discordance_capture.pdf), [`results/plastome_admixture_cytonuclear_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/plastome_admixture_cytonuclear_report.md))
 
 ### Phase 4: Genome-Wide Association Studies (GWAS) & Adaptive Evolution
 
@@ -130,7 +130,9 @@ global-rice-popgen/
 │   ├── plastome_annotation_report.md        # Feature extraction & coordinate report
 │   ├── plastome_alignment_variant_report.md # MSA liftover & variant calling report
 │   ├── plastome_diversity_divergence_report.md # Population diversity & divergence report
-│   └── plastome_phylogeny_haplotype_network_report.md # Phylogeny & haplotype network report
+│   ├── plastome_phylogeny_haplotype_network_report.md # Phylogeny & haplotype network report
+│   ├── plastome_population_structure_report.md # Population structure, Kinship & UMAP report
+│   └── plastome_admixture_cytonuclear_report.md # Admixture (K=2..8) & Cytonuclear discordance report
 ├── scripts/
 │   ├── search_ncbi_chloroplast.py           # Automated NCBI Entrez search and curation tool
 │   ├── download_sativa_plastomes.py         # Batch download & SHA-256 verification of sativa plastomes
@@ -142,11 +144,13 @@ global-rice-popgen/
 │   ├── align_and_liftover_plastomes.py      # Numba affine-gap alignment & coordinate liftover
 │   ├── call_and_polarize_variants.py        # Outgroup polarization, VCF 4.2 caller & indel marker
 │   ├── compute_diversity_and_divergence.py  # pi, theta_W, Tajima's D, Hudson's Fst & block jackknife
-│   └── reconstruct_phylogeny_and_network.py # K80/JC69 NJ trees, 100 bootstraps & median-joining network
+│   ├── reconstruct_phylogeny_and_network.py # K80/JC69 NJ trees, 100 bootstraps & median-joining network
+│   ├── compute_population_structure.py      # Physical LD pruning, Kinship K, SVD-PCA & 2D/3D UMAP
+│   └── compute_admixture_and_cytonuclear_discordance.py # Multi-K EM Admixture (K=2..8) & Cytonuclear discordance
 ├── tests/
 │   ├── test_phase1.py                       # Automated verification for Phase 1 data integrity
 │   ├── test_phase2.py                       # Automated tests for Phase 2 alignment, masking & VCF
-│   └── test_phase3.py                       # Analytical invariant tests for diversity, Fst & trees
+│   └── test_phase3.py                       # Analytical invariant tests for diversity, Fst, trees & admixture
 ├── tools/
 │   └── mafft-win/                           # MAFFT multiple sequence aligner distribution
 └── README.md                                # Project summary, hypotheses, outcomes, methods & citations
@@ -177,10 +181,11 @@ python scripts\generate_callable_mask.py
 python scripts\align_and_liftover_plastomes.py
 python scripts\call_and_polarize_variants.py
 
-# 5. Phase 3: Population diversity, divergence, phylogeny & haplotype networks
+# 5. Phase 3: Population diversity, divergence, phylogeny & cytonuclear dynamics
 python scripts\compute_diversity_and_divergence.py
 python scripts\reconstruct_phylogeny_and_network.py
 python scripts\compute_population_structure.py
+python scripts\compute_admixture_and_cytonuclear_discordance.py
 ```
 
 ---
@@ -324,6 +329,26 @@ All summary statistics are calculated as linear combinations of the unfolded Sit
   $$\lambda_{GC} = \frac{\text{median}(T_1^2, \dots, T_M^2)}{0.4549364}$$
   Multiple testing error control is enforced via the Benjamini-Hochberg step-up procedure at FDR $q < 0.05$.  
   *Citations:* Devlin & Roeder (1999) *Biometrics* [[DOI](https://doi.org/10.1111/j.0006-341x.1999.00997.x)]; Benjamini & Hochberg (1995) *J R Stat Soc B* [[DOI](https://doi.org/10.1111/j.2517-6161.1995.tb02031.x)]
+
+### 8.8. Ancestral Admixture Modeling & Cytonuclear Discordance Projection
+
+* **Expectation-Maximization (EM) for Bernoulli Likelihood Admixture:**  
+  Model individual ancestry proportions $\mathbf{Q} \in [0, 1]^{N \times K}$ ($\sum_k Q_{ik} = 1$) and ancestral cluster allele frequencies $\mathbf{F} \in [0, 1]^{K \times M}$ on haploid tag SNPs with Laplace smoothing ($\alpha = 0.001$):
+  $$z_{imk} = \frac{Q_{ik} F_{km}^{G_{im}}(1 - F_{km})^{1 - G_{im}}}{\sum_{l=1}^K Q_{il} F_{lm}^{G_{im}}(1 - F_{lm})^{1 - G_{im}}}, \quad Q_{ik}^{(t+1)} = \frac{\sum_m z_{imk} + \alpha}{M + K\alpha}, \quad F_{km}^{(t+1)} = \frac{\sum_i z_{imk}G_{im} + \alpha}{\sum_i z_{imk} + 2\alpha}$$
+  *Citation:* Alexander, Novembre, & Lange (2009) *Genome Res* [[DOI](https://doi.org/10.1101/gr.094052.109)]  
+  *Script:* [`scripts/compute_admixture_and_cytonuclear_discordance.py`](file:///d:/Magister/Proyek/global-rice-popgen/scripts/compute_admixture_and_cytonuclear_discordance.py)
+* **5-Fold Cross-Validation Predictive Deviance ($D_{\text{CV}}$):**  
+  Evaluation of optimal model complexity across $K = 2\dots8$:
+  $$D_{\text{CV}} = -2 \sum_{(i, m) \in \Omega_v} \left[ G_{im} \ln \hat{p}_{im} + (1 - G_{im}) \ln (1 - \hat{p}_{im}) \right] / |\Omega_v|$$
+  Identifies $K^* = 7$ as the global optimum minimizing held-out predictive deviance ($\text{CV Deviance} = 0.1177 \pm 0.0271$).
+* **Total Variation Distance Cytonuclear Discordance Index (CDI):**  
+  Quantification of cytonuclear disequilibrium against 3K Rice Genomes Project ($N = 3,024$) nuclear ancestry:
+  $$\text{CDI}_i = D_{\text{TV}}(Q_i^{\text{plast}}, Q_i^{\text{nuc}}) = \frac{1}{2} \sum_{c \in \{\text{Jap}, \text{Ind}\}} |Q_{i,c}^{\text{plast}} - Q_{i,c}^{\text{nuc}}|$$
+  Stratified into: Concordant ($\text{CDI} < 0.35$), Admixed Introgression ($0.35 \le \text{CDI} < 0.70$), and Chloroplast Capture ($\text{CDI} \ge 0.70$).
+* **Contingency Dependency Testing & Effect Size:**  
+  Quantification of nuclear-cytoplasmic co-segregation and asymmetric capture flux:
+  $$\chi^2 = 68.82 \quad (\text{df} = 9, \, p = 2.59 \times 10^{-11}), \qquad \text{Cramér's } V = 0.5049$$
+  *Report:* [`results/plastome_admixture_cytonuclear_report.md`](file:///d:/Magister/Proyek/global-rice-popgen/results/plastome_admixture_cytonuclear_report.md)
 
 ---
 

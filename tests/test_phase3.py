@@ -327,3 +327,111 @@ def test_umap_manifold_embeddings():
         assert np.isfinite(df_umap[c].values).all(), f"Found infinite values in UMAP column {c}."
 
 
+# ==============================================================================
+# 7. Subtask 3.4 Ancestral Admixture & Cytonuclear Discordance Tests
+# ==============================================================================
+
+def test_subtask3_4_deliverables_exist():
+    """Verify all Subtask 3.4 tabular datasets and publication figures exist and are non-empty."""
+    tables = [
+        "results/tables/plastome_admixture_cv_errors.tsv",
+        "results/tables/plastome_admixture_q_matrices.tsv",
+        "results/tables/plastome_admixture_ancestry_frequencies.tsv",
+        "results/tables/cytonuclear_discordance_matrix.tsv",
+        "results/tables/cytonuclear_subpopulation_contingency.tsv",
+    ]
+    for tbl in tables:
+        assert os.path.exists(tbl), f"Deliverable table {tbl} is missing."
+        df = pd.read_csv(tbl, sep="\t")
+        assert len(df) > 0, f"Table {tbl} is empty."
+
+    figures = [
+        "results/figures/fig9_plastome_admixture_ancestry.pdf",
+        "results/figures/fig9_plastome_admixture_ancestry.png",
+        "results/figures/fig10_cytonuclear_discordance_capture.pdf",
+        "results/figures/fig10_cytonuclear_discordance_capture.png",
+    ]
+    for fig in figures:
+        assert os.path.exists(fig), f"Publication figure {fig} missing."
+        assert os.path.getsize(fig) > 1000, f"Figure {fig} has abnormally small size."
+
+
+def test_admixture_q_matrix_invariants():
+    """Verify Q-matrix rows sum to 1.0 +- 1e-4 for all K=2..8 across all 90 accessions."""
+    df_q = pd.read_csv("results/tables/plastome_admixture_q_matrices.tsv", sep="\t")
+    assert len(df_q) == 90, f"Expected 90 accessions in Q-matrices table, got {len(df_q)}"
+
+    for k in range(2, 9):
+        cols = [f"K{k}_Q{c}" for c in range(1, k + 1)]
+        for c in cols:
+            assert c in df_q.columns, f"Column {c} missing from Q-matrix table."
+            assert (df_q[c] >= 0.0 - 1e-6).all(), f"Found negative ancestry proportion in {c}."
+            assert (df_q[c] <= 1.0 + 1e-6).all(), f"Found ancestry proportion > 1 in {c}."
+
+        row_sums = df_q[cols].sum(axis=1).values
+        assert np.allclose(row_sums, 1.0, atol=1e-4), f"Q-matrix row sums deviate from 1.0 at K={k}."
+
+    # Verify ancestral allele frequencies matrix
+    df_f = pd.read_csv("results/tables/plastome_admixture_ancestry_frequencies.tsv", sep="\t")
+    freq_cols = [c for c in df_f.columns if c.startswith("Ancestral_Cluster_")]
+    assert len(freq_cols) >= 2, "Expected ancestral allele frequency columns in F table."
+    for c in freq_cols:
+        assert (df_f[c] >= 0.0).all() and (df_f[c] <= 1.0).all(), f"Allele frequency in {c} out of [0, 1] bounds."
+
+
+def test_admixture_cv_error_properties():
+    """Verify CV deviance values are monotonically evaluated across K=2..8 and non-negative."""
+    df_cv = pd.read_csv("results/tables/plastome_admixture_cv_errors.tsv", sep="\t")
+    assert len(df_cv) == 7, f"Expected 7 K-evaluations (K=2..8), got {len(df_cv)}"
+    assert list(df_cv["K"].values) == list(range(2, 9)), "K values do not match expected range 2..8."
+
+    assert (df_cv["CV_Error_Mean"] > 0).all(), "Found non-positive CV error deviance."
+    assert (df_cv["CV_Error_Std"] >= 0).all(), "Found negative CV error standard deviation."
+    assert not df_cv["CV_Error_Mean"].isna().any(), "Found NaN in CV error mean."
+
+
+def test_cytonuclear_discordance_invariants():
+    """Verify CDI is strictly bounded in [0, 1] and captures cold-adapted introgressions."""
+    df_disc = pd.read_csv("results/tables/cytonuclear_discordance_matrix.tsv", sep="\t")
+    assert len(df_disc) == 90, f"Expected 90 accessions in discordance table, got {len(df_disc)}"
+
+    cdi = df_disc["Cytonuclear_Discordance_Index"].values
+    assert (cdi >= 0.0 - 1e-6).all(), "Found negative CDI."
+    assert (cdi <= 1.0 + 1e-6).all(), "Found CDI > 1.0."
+
+    # Validate categories
+    valid_cats = {"Concordant", "Admixed_Introgression", "Chloroplast_Capture"}
+    assert set(df_disc["Discordance_Category"].unique()).issubset(valid_cats), "Unexpected discordance category."
+
+    # Verify canonical Indica cultivars are concordant
+    canonical_indica = ["93-11", "IR8", "Zhenshan 97", "Minghui 63", "TN1"]
+    for cult in canonical_indica:
+        match = df_disc[df_disc["Cultivar"] == cult]
+        if not match.empty:
+            row = match.iloc[0]
+            assert row["Discordance_Category"] == "Concordant", f"{cult} expected to be Concordant, got {row['Discordance_Category']}"
+            assert row["Cytonuclear_Discordance_Index"] <= 0.35, f"{cult} has unexpectedly high CDI ({row['Cytonuclear_Discordance_Index']})"
+
+    # Verify Russian northern margin capture cultivars have CDI >= 0.70 and Chloroplast_Capture
+    russian_capture = ["Tai Bonnet", "Zlata", "Oceano", "Snezhinka", "Svetlana", "Mars", "Ruille", "Arroz Buit"]
+    for cult in russian_capture:
+        match = df_disc[df_disc["Cultivar"] == cult]
+        if not match.empty:
+            row = match.iloc[0]
+            assert row["Discordance_Category"] == "Chloroplast_Capture", f"{cult} expected to be Chloroplast_Capture, got {row['Discordance_Category']}"
+            assert row["Cytonuclear_Discordance_Index"] >= 0.70, f"{cult} expected CDI >= 0.70, got {row['Cytonuclear_Discordance_Index']}"
+
+
+def test_cytonuclear_contingency_statistics():
+    """Verify contingency table sums to exactly 90 accessions and shows significant association."""
+    df_cont = pd.read_csv("results/tables/cytonuclear_subpopulation_contingency.tsv", sep="\t")
+    assert "Nuclear_Primary_Group" in df_cont.columns, "Nuclear_Primary_Group column missing from contingency table."
+
+    # Sum of counts across all cells excluding Total row and column
+    df_no_tot = df_cont[df_cont["Nuclear_Primary_Group"] != "Total"]
+    count_cols = [c for c in df_no_tot.columns if c not in ["Nuclear_Primary_Group", "Total"]]
+    total_samples = df_no_tot[count_cols].values.sum()
+    assert total_samples == 90, f"Contingency matrix total ({total_samples}) != 90."
+
+
+
