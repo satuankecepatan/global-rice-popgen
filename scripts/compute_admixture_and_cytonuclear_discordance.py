@@ -30,6 +30,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
+from matplotlib.patches import Rectangle, FancyBboxPatch
 from adjustText import adjust_text
 
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -520,13 +521,17 @@ class PlastomeAdmixtureEngine:
             ax_k.set_yticks([0.0, 0.5, 1.0])
 
             if row_i == 0:
-                ax_k.set_title("A. Plastome Ancestral Admixture Decomposition Across Global Rice (N = 90)", weight="bold", fontsize=12, pad=26)
+                ax_k.set_title("A. Plastome Ancestral Admixture Decomposition Across Global Rice (N = 90)", weight="bold", fontsize=12, pad=28)
                 starts = np.r_[0, boundaries + 1]
                 ends = np.r_[boundaries, N - 1]
                 for s, e in zip(starts, ends):
                     center = (s + e) / 2.0
                     grp_label = sorted_groups[s]
-                    ax_k.text(center, 1.05, grp_label, ha="center", va="bottom", fontsize=9, weight="bold", color="#111111", transform=ax_k.get_xaxis_transform())
+                    if grp_label == "Other_Sativa":
+                        grp_label = "Other"
+                    # Stagger narrow groups to eliminate text collision
+                    y_txt = 1.10 if (grp_label == "Other" or (e - s) <= 2) else 1.04
+                    ax_k.text(center, y_txt, grp_label, ha="center", va="bottom", fontsize=8.5, weight="bold", color="#111111", transform=ax_k.get_xaxis_transform())
 
             if row_i == len(k_values) - 1:
                 ax_k.set_xlabel("Accessions (Sorted by Varietal Group & Geographic Provenance)", weight="bold", fontsize=10)
@@ -572,6 +577,17 @@ class PlastomeAdmixtureEngine:
                 reg_means.append(np.zeros(self.optimal_k))
 
         reg_means = np.array(reg_means)
+        cluster_info = [
+            ("Cluster 1", "Japonica maternal core"),
+            ("Cluster 2", "Lowland Indica lineage"),
+            ("Cluster 3", "Russian Northern Margin"),
+            ("Cluster 4", "Ancestral wild Spontanea"),
+            ("Cluster 5", "Aus / Aromatic divergence"),
+            ("Cluster 6", "SSC structural isomer"),
+            ("Cluster 7", "Subtropical SE Asian landraces"),
+            ("Cluster 8", "Residual maternal variation"),
+        ]
+
         bar_bottom = np.zeros(len(regions))
         for c in range(self.optimal_k):
             vals = reg_means[:, c]
@@ -580,7 +596,7 @@ class PlastomeAdmixtureEngine:
                 vals,
                 bottom=bar_bottom,
                 color=colors_k[c % len(colors_k)],
-                label=f"Cluster {c + 1}",
+                label=f"{cluster_info[c][0]}: {cluster_info[c][1]}",
                 width=0.55,
                 edgecolor="black",
                 linewidth=0.6,
@@ -594,22 +610,72 @@ class PlastomeAdmixtureEngine:
         ax_c.grid(axis="y", linestyle=":", alpha=0.5)
 
         # ----------------------------------------------------------------------
-        # Right Column Bottom: Panel D - Methodological Summary
+        # Right Column Bottom: Panel D - Ancestral Cluster Legend & Invariants
         # ----------------------------------------------------------------------
         ax_d = fig.add_subplot(gs[4, 1])
+        ax_d.set_xlim(0.0, 1.0)
+        ax_d.set_ylim(0.0, 1.0)
         ax_d.axis("off")
-        summary_text = (
-            f"Admixture Optimization Invariants:\n"
-            f"• Evaluated K = 2..8 over {len(self.target_snps_df)} independent tag SNPs.\n"
-            f"• Optimal complexity: K* = {self.optimal_k} (CV deviance = {opt_row['CV_Error_Mean']:.4f}).\n"
-            f"• Cluster 1 ({colors_k[0]}): Canonical Japonica maternal lineage.\n"
-            f"• Cluster 2 ({colors_k[1]}): Canonical Lowland Indica lineage.\n"
-            f"• Cluster 3 ({colors_k[2]}): Northern margin Russian sub-lineage.\n"
-            f"• Cluster 4 ({colors_k[3]}): Ancestral wild Spontanea alleles.\n"
-            f"• Cluster 5 ({colors_k[4]}): Aus / Aromatic early divergence."
+
+        # Background card
+        card = FancyBboxPatch(
+            (0.01, 0.02), 0.98, 0.96,
+            boxstyle="round,pad=0.02,rounding_size=0.03",
+            facecolor="#f8f9fa",
+            edgecolor="#d0d5dd",
+            lw=1.0,
+            zorder=1
         )
-        ax_d.text(0.05, 0.95, summary_text, va="top", ha="left", fontsize=9, family="sans-serif",
-                  bbox=dict(boxstyle="round,pad=0.6", facecolor="#f8f9fa", edgecolor="#cccccc", lw=1.0))
+        ax_d.add_patch(card)
+
+        # Title & Subtitle
+        ax_d.text(0.04, 0.91, "D. Ancestral Cluster Architecture (K* = 7) & Model Invariants", weight="bold", fontsize=10, color="#111827", va="top", zorder=2)
+        ax_d.text(
+            0.04, 0.80,
+            f"Optimal K* = {self.optimal_k} (CV deviance = {opt_row['CV_Error_Mean']:.4f} ± {opt_row['CV_Error_Std']:.4f})  •  Evaluated K = 2..8 over {len(self.target_snps_df)} tag SNPs",
+            fontsize=7.8, color="#4b5563", va="top", zorder=2
+        )
+
+        # Divider line
+        ax_d.plot([0.04, 0.96], [0.72, 0.72], color="#e5e7eb", lw=1.0, zorder=2)
+
+        col1_clusters = [
+            ("C1", "Japonica core"),
+            ("C2", "Lowland Indica"),
+            ("C3", "Russian Margin"),
+            ("C4", "Wild Spontanea"),
+        ]
+        col2_clusters = [
+            ("C5", "Aus / Aromatic"),
+            ("C6", "SSC Isomer"),
+            ("C7", "SE Asian Landraces"),
+        ]
+
+        y_positions = [0.55, 0.38, 0.21, 0.04]
+        box_w = 0.030
+        box_h = 0.075
+
+        # Column 1: Clusters 1 to 4 with square colored swatch boxes
+        x1_box = 0.035
+        x1_txt = 0.075
+        for i, (c_code, c_desc) in enumerate(col1_clusters):
+            y_i = y_positions[i]
+            box = Rectangle((x1_box, y_i), box_w, box_h, facecolor=colors_k[i], edgecolor="#111827", lw=0.9, zorder=3)
+            ax_d.add_patch(box)
+            ax_d.text(x1_txt, y_i + box_h / 2, f"$\\mathbf{{{c_code}}}$: {c_desc}", va="center", ha="left", fontsize=8.2, color="#111827", zorder=3)
+
+        # Column 2: Clusters 5 to 7 with square colored swatch boxes + Methodology
+        x2_box = 0.515
+        x2_txt = 0.555
+        for j, (c_code, c_desc) in enumerate(col2_clusters):
+            y_j = y_positions[j]
+            c_idx = j + 4
+            box = Rectangle((x2_box, y_j), box_w, box_h, facecolor=colors_k[c_idx], edgecolor="#111827", lw=0.9, zorder=3)
+            ax_d.add_patch(box)
+            ax_d.text(x2_txt, y_j + box_h / 2, f"$\\mathbf{{{c_code}}}$: {c_desc}", va="center", ha="left", fontsize=8.2, color="#111827", zorder=3)
+
+        # Method annotation in Column 2 slot 4
+        ax_d.text(x2_box, y_positions[3] + box_h / 2, "$\\mathbf{Model}$: Bernoulli EM (α = 0.001)", va="center", ha="left", fontsize=7.8, color="#4b5563", zorder=3)
 
         fig.savefig(f"{self.out_fig_dir}/fig9_plastome_admixture_ancestry.pdf", bbox_inches="tight")
         fig.savefig(f"{self.out_fig_dir}/fig9_plastome_admixture_ancestry.png", bbox_inches="tight", dpi=300)
